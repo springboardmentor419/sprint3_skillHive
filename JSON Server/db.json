@@ -1,6 +1,133 @@
 {
-  "admin":[],
-  "instructors":[],
-  "candidates":[],
-  "courses":[],
+  "applicantDetails": [],
+  "instructorDetails": [
+    {
+      "id": "0b44",
+      "fullName": "Shraddha",
+      "teachingDomain": "Web Development",
+      "upcoming_courses": "Angular complete Guide",
+      "start_date": "24-12-23",
+      "end_date": "24-10-14",
+      "candidateEnrolled": 47,
+      "instructorRating": 4.5,
+      "assignedCourses": [
+        {
+          "id": "5692",
+          "courseId": "1",
+          "name": "Angular Basics",
+          "startDate": "2024-12-21",
+          "endDate": "2024-12-28",
+          "technology": "TypeScript",
+          "status": "Upcoming",
+          "instructor": ""
+        },
+        {
+          "id": "5693",
+          "courseId": "2",
+          "name": "react Basics",
+          "startDate": "2024-12-21",
+          "endDate": "2024-12-28",
+          "technology": "TypeScript",
+          "status": "Upcoming",
+          "instructor": ""
+        }
+      ]
+    },
+    {
+      "id": "9b27",
+      "fullName": "sumit jugtwan",
+      "teachingDomain": "DevOps",
+      "upcoming_courses": "Angular Complete Guide",
+      "start_date": "24-12-23",
+      "end_date": "24-10-14",
+      "candidateEnrolled": 47,
+      "instructorRating": 4.5,
+      "assignedCourses": [
+        {
+          "id": "5695",
+          "courseId": "3",
+          "name": "big data",
+          "startDate": "2024-12-21",
+          "endDate": "2024-12-28",
+          "technology": "TypeScript",
+          "status": "Upcoming",
+          "instructor": ""
+        },
+        {
+          "id": "56945",
+          "courseId": "1",
+          "name": "c++ Basics",
+          "startDate": "2024-12-21",
+          "endDate": "2024-12-28",
+          "technology": "TypeScript",
+          "status": "Upcoming",
+          "instructor": ""
+        }
+      ]
+    },
+    {
+      "id": "4485",
+      "fullName": "shekhar jugtwan",
+      "teachingDomain": "DevOps",
+      "upcoming_courses": "Angular Complete Guide",
+      "start_date": "24-12-23",
+      "end_date": "24-10-14",
+      "candidateEnrolled": 47,
+      "instructorRating": 4.5,
+      "assignedCourses": []
+    },
+    {
+      "id": "2bd7",
+      "fullName": "Kashish Bhargava",
+      "teachingDomain": "Cloud Computing",
+      "upcoming_courses": "Angular Complete Guide",
+      "start_date": "24-12-23",
+      "end_date": "24-10-14",
+      "candidateEnrolled": 47,
+      "instructorRating": 4.5,
+      "assignedCourses": []
+    }
+  ],
+  "courses": [
+    {
+      "id": "5692",
+      "courseId": "1",
+      "name": "Angular Basics",
+      "startDate": "2024-12-21",
+      "endDate": "2024-12-28",
+      "technology": "TypeScript",
+      "status": "Upcoming",
+      "instructor": "Shraddha"
+    },
+    {
+      "id": "5693",
+      "courseId": "2",
+      "name": "react Basics",
+      "startDate": "2024-12-21",
+      "endDate": "2024-12-28",
+      "technology": "TypeScript",
+      "status": "Upcoming",
+      "instructor": "Shraddha"
+    },
+    {
+      "id": "5695",
+      "courseId": "3",
+      "name": "big data",
+      "startDate": "2024-12-21",
+      "endDate": "2024-12-28",
+      "technology": "TypeScript",
+      "status": "Upcoming",
+      "instructor": "sumit jugtwan"
+    },
+    {
+      "id": "56945",
+      "courseId": "1",
+      "name": "c++ Basics",
+      "startDate": "2024-12-21",
+      "endDate": "2024-12-28",
+      "technology": "TypeScript",
+      "status": "Upcoming",
+      "instructor": "sumit jugtwan"
+    }
+  ]
 }
