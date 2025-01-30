@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Space out the items */
+    align-items: center; /* Vertically center the items */
+    padding: 10px 20px; /* Padding for the navbar */
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
