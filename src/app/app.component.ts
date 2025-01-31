@@ -1,23 +1,24 @@
-import { AfterContentInit, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./authentication/components/header/header.component";
-import { FooterComponent } from "./authentication/components/footer/footer.component";
-import { loginDetails } from './interfaces/auth';
-import { AuthService } from './authentication/services/auth.service';
-
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import {SideMenuComponent} from './shared/side-menu/side-menu.component';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet,RouterModule, FormsModule, SideMenuComponent, HeaderComponent, FooterComponent,NgIf],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterContentInit{
-  title = 'Skill Hive Learning Nexus';
-  constructor(public authService: AuthService) {
-  }
-  ngAfterContentInit(): void {
-    // localStorage.setItem('loginData', null);
+export class AppComponent {
+  title = 'Skillhive Learning Nexus';
+
+  isMenuVisible: boolean = false;
+
+  onMenuToggle() {
+    this.isMenuVisible = !this.isMenuVisible;
   }
 }
