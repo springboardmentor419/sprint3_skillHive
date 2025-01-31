@@ -1,24 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from './shared/header/header.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import {SideMenuComponent} from './shared/side-menu/side-menu.component';
-import { NgIf } from '@angular/common';
+import { RouterModule,} from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+
+import { FooterComponent } from './instructor/components/footer/footer.component';
+import { NewsletterComponent } from "./instructor/components/newsletter/newsletter.component";
+import { NavigationComponent } from "./instructor/components/navigation/navigation.component";
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterModule, FormsModule, SideMenuComponent, HeaderComponent, FooterComponent,NgIf],
+  imports: [RouterModule, HttpClientModule,  FooterComponent, NewsletterComponent, NavigationComponent],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Skillhive Learning Nexus';
-
-  isMenuVisible: boolean = false;
-
-  onMenuToggle() {
-    this.isMenuVisible = !this.isMenuVisible;
-  }
+  title = 'AngularProject';
 }
