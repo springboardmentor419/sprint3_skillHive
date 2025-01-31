@@ -1,6 +1,148 @@
 {
-  "admin":[],
-  "instructors":[],
-  "candidates":[],
-  "courses":[],
+  "users": [
+    {
+      "id": "b5f2",
+      "fullName": "Bhanu Pratap Singh",
+      "email": "bhanusingh09@gmail.com",
+      "password": "BhanuPS09",
+      "otp": "524215",
+      "otpExpiry": "2025-01-25T11:17:35.676Z"
+    },
+    {
+      "id": "6af0",
+      "fullName": "Mentor",
+      "email": "mentor10@gmail.com",
+      "password": "Mentor10",
+      "otp": null,
+      "otpExpiry": null
+    },
+    {
+      "id": "b24e",
+      "fullName": "Aarti",
+      "email": "aarti10@gmail.com",
+      "password": "Aarti10",
+      "otp": null,
+      "otpExpiry": null
+    },
+    {
+      "id": "0030",
+      "fullName": "Bhanu Pratap Singh",
+      "email": "bhanusinghpcm09@gmail.com",
+      "password": "Pratap1234",
+      "otp": "544410",
+      "otpExpiry": "2025-01-29T13:26:47.904Z"
+    },
+    {
+      "id": "f982",
+      "fullName": "Singh",
+      "email": "singh10@gmail.com",
+      "password": "Singh10"
+    },
+    {
+      "id": "bf4f",
+      "fullName": "BPS",
+      "email": "bhanusinghpcm091201@gmail.com",
+      "password": "BhanuPS091201"
+    },
+    {
+      "id": "86a3",
+      "fullName": "Xyz",
+      "email": "xyz10@gmail.com",
+      "password": "Xyz10@gm"
+    }
+  ],
+  "admins": [
+    {
+      "id": "864f",
+      "fullName": "Admin",
+      "email": "admin10@gmail.com",
+      "password": "Admin10",
+      "otp": null,
+      "otpExpiry": null
+    }
+  ],
+  "instructors": [
+    {
+      "id": "4225",
+      "fullName": "Instructor1",
+      "email": "instructor01@gmail.com",
+      "password": "Instructor10",
+      "otp": null,
+      "otpExpiry": null
+    },
+    {
+      "id": "6db2",
+      "fullName": "Instructor2",
+      "email": "instructor02@gmail.com",
+      "password": "Instructor10",
+      "otp": null,
+      "otpExpiry": null
+    }
+  ],
+  "newsletteremails": [
+    {
+      "id": "3567",
+      "email": "bhanu@gmail.com"
+    },
+    {
+      "id": "8bfe",
+      "email": "bhanusingh10@gmail.com"
+    },
+    {
+      "id": "ae0d",
+      "email": "abc@gmail.com"
+    },
+    {
+      "id": "4b00",
+      "email": "bhanupratap10@gmail.com"
+    },
+    {
+      "id": "88a5",
+      "email": "bhanusingh@gmail.com"
+    },
+    {
+      "id": "e295",
+      "email": "bhanusingh"
+    },
+    {
+      "id": "f5da",
+      "email": "xyz10@gmail.com"
+    },
+    {
+      "id": "86fa",
+      "email": "abc10@gmail.com"
+    },
+    {
+      "id": "2744",
+      "email": "enter"
+    },
+    {
+      "id": "f4ca",
+      "email": ""
+    },
+    {
+      "id": "4c8f",
+      "email": ""
+    },
+    {
+      "id": "a76c",
+      "email": ""
+    },
+    {
+      "id": "bcc0",
+      "email": "bh@gmail.com"
+    },
+    {
+      "id": "5080",
+      "email": "bhanusignh10@gmail.com"
+    },
+    {
+      "id": "f4df",
+      "email": "abch@gmail.com"
+    },
+    {
+      "id": "3ac2",
+      "email": "awnmllm10@gmail.com"
+    }
+  ]
 }

@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ngx-toastr/toastr.css";
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+  overflow-y: scroll;
+}
+
+.toast-error {
+  width: 400px !important;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+}
+
+app-header {
+  z-index: 3;
+  position: fixed;
+  width: -webkit-fill-available;
+}
+
+app-footer {
+  width: -webkit-fill-available;
+}
+
+app-newsletter {
+  width: 90%;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+app-contact,
+app-signup,
+app-login,
+app-aboutus,
+app-forgotpassword,
+app-home {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-top: 40px;
+}
