@@ -5,7 +5,7 @@ import { Router, RouterModule } from '@angular/router';
 import { Candidate } from '../../models/candidate.model';  // Import the Candidate interface
 import { CandidateService } from '../../services/candidate.service';
 import { HeaderComponent } from '../header/header.component'; // Import HeaderComponent
-import { FooterComponent } from '../../../shared/footer/footer.component'; // Import FooterComponent
+import { FooterComponent } from '../footer/footer.component'; // Import FooterComponent
 import { AdditionalDetails } from '../../models/candidate.model';  // Import AdditionalDetails interface
 
 @Component({
@@ -44,6 +44,11 @@ export class CandidateRegistrationComponent implements OnInit {
   constructor(private candidateService: CandidateService, public router: Router) {}
 
   ngOnInit(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    
       const storedEmail = localStorage.getItem('candidateEmail');
       
       // If email is found in localStorage, check if additional details exist

@@ -4,7 +4,7 @@ import { CandidateService } from '../../services/candidate.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component'; 
-import { FooterComponent } from '../../../shared/footer/footer.component'; 
+import { FooterComponent } from '../footer/footer.component'; 
 @Component({
   selector: 'app-candidate-login',
   standalone: true,
@@ -27,6 +27,10 @@ export class CandidateLoginComponent implements OnInit{
     // if (localStorage.getItem('candidateEmail')) {
     //   this.router.navigate(['candidate/dashboard'])
     // }
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }
 
   onLogin() {

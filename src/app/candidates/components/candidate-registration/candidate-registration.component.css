@@ -1,33 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@400;500;700&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-h1, h2 {
-  font-family: 'Playfair Display', serif; /* Elegant font for headings */
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  display: flex;
-  min-height: 100vh;
-  overflow: hidden;
-}
-
 .container {
   display: flex;
   width: 100%;
 }
 
 .left-side {
-  background-color: #fff;
   flex: 1;
   display: flex;
   justify-content: flex-start;
@@ -65,15 +41,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
   padding:80px ;
 }
 
 .registration-form {
-  background-color: #FFE5E1;
+  background-color: #ffe5e1;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  padding: 50px;
+  padding: 30px 40px;
   width: 100%;
   max-width: 700px;
   text-align: center;
@@ -94,13 +68,13 @@ h2 {
 form {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 25px;
+  gap: 20px;
 }
 
 label {
   display: block;
   text-align: left;
-  font-size: 1.1em;
+  font-size: 16px;
   margin-bottom: 8px;
   font-weight: bold;
   color: #555;
@@ -108,27 +82,27 @@ label {
 
 input, select {
   width: 100%;
-  padding: 15px;
+  padding: 12px;
   border: 2px solid #ddd;
-  border-radius: 10px;
-  font-size: 1.1em;
+  border-radius: 8px;
+  font-size: 1em;
   transition: border 0.3s ease-in-out;
 }
 
 input:focus, select:focus {
-  border-color: #007bff;
+  border-color: #9C4DF4;
   outline: none;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
 }
 
 button {
-  padding: 15px;
+  padding: 12px;
   background-color: #9C4DF4;
   border: none;
   color: #fff;
   font-size: 1.2em;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
@@ -151,7 +125,8 @@ button[disabled] {
 
 p {
   margin-top: 20px;
-  font-size: 1.1em;
+  font-size: 0.95em;
+  color: #757575;
 }
 
 a {
@@ -189,10 +164,12 @@ a:hover {
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
+    width: 100%;
   }
 
   .left-side, .right-side {
     width: 100%;
+    padding: 25px;
   }
 
   .learning-image {
@@ -205,6 +182,7 @@ a:hover {
 
   .registration-form {
     padding: 30px;
+    width: 100%;
   }
 }
 .extras {
@@ -245,8 +223,9 @@ blockquote {
   margin-top: 30px;
   font-size: 1.1em;
   font-style: italic;
+  background-color: white;
   color: #2a3d66;
   border-left: 4px solid #9C4DF4;
-  padding-left: 10px;
+  padding:0px 10px;
 }
 

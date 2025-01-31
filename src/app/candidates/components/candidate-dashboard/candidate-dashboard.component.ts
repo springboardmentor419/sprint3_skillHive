@@ -2,11 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterModule, Router } from '@angular/router'; // Ensure Router and RouterModule are imported
 import { HeaderComponent } from '../header/header.component'; // Import HeaderComponent
-import { FooterComponent } from '../../../shared/footer/footer.component'; // Import FooterComponent
+import { FooterComponent } from '../footer/footer.component'; // Import FooterComponent
 import { CandidateService } from '../../services/candidate.service';
 import { response } from 'express';
 import { error } from 'console';
-import { SideMenuComponent } from "../../../shared/side-menu/side-menu.component";
+import { SideMenuComponent } from "../side-menu/side-menu.component";
 import { UpdateProfileComponent } from "../update-profile/update-profile.component";
 import { ChangePasswordComponent } from "../change-password/change-password.component";
 

@@ -11,23 +11,35 @@ import { CourseService } from '../../../course/services/course.service';
   styleUrl: './view-all-courses.component.css'
 })
 export class ViewAllCoursesComponent implements OnInit {
-  courses: any[] = []; // All courses
-  filteredCourses: any[] = []; // Filtered courses
-  categories: string[] = ['Programming', 'Design', 'Business']; // Example categories
-  selectedCategory: string = ''; // Selected category for filtering
+  courses: any[] = [];
+  filteredCourses: any[] = [];
+  categories: string[] = [];
+  selectedCategory: string = 'All'; // Selected category for filtering
   searchQuery: string = ''; // Search query for filtering courses
   difficultyFilters: string[] = []; // Difficulty filters (Beginner, Intermediate, Advanced)
   durationFilters: string[] = []; // Duration filters (5 hrs, 10 hrs, etc.)
   ratingFilters: string[] = []; // Rating filters (4.5 and above, etc.)
   router: any;
+  userExist : boolean;
+  bookmark : boolean = false;
+
 
   constructor(private courseService: CourseService) {}
 
   ngOnInit() {
-    // Fetch all courses when the component is initialized
+    const candidateEmail = localStorage.getItem('candidateEmail');
     this.courseService.getCourses().subscribe((data) => {
       this.courses = data;
-      this.filteredCourses = data; // Initialize filteredCourses with all courses
+      this.filteredCourses = data;
+      const uniqueCategories = Array.from(new Set(data.map(course => course.technology)));
+      this.categories = ['All', ...uniqueCategories];
+      console.log(this.filteredCourses)
+
+      if (candidateEmail) {
+        this.userExist = this.courses.some(course => course.enrolledCandidates.includes(candidateEmail));
+      } else {
+        this.userExist = false;
+      }
     });
   }
    // Enroll the user in the course
@@ -69,47 +81,79 @@ export class ViewAllCoursesComponent implements OnInit {
     this.applyFilters();
   }
 
-  // Apply selected filters and search query
-  applyFilters() {
-    let filtered = this.courses;
-
-    // Filter by category
-    if (this.selectedCategory) {
-      filtered = filtered.filter((course) =>
-        course.category.includes(this.selectedCategory)
-      );
-    }
-
-    // Filter by difficulty
-    if (this.difficultyFilters.length) {
-      filtered = filtered.filter((course) =>
-        this.difficultyFilters.includes(course.difficulty)
-      );
-    }
-
-    // Filter by duration
-    if (this.durationFilters.length) {
-      filtered = filtered.filter((course) =>
-        this.durationFilters.includes(course.duration)
-      );
-    }
-
-    // Filter by rating
-    if (this.ratingFilters.length) {
-      filtered = filtered.filter((course) =>
-        this.ratingFilters.includes(course.rating)
-      );
-    }
-
-    // Filter by search query
-    if (this.searchQuery) {
-      filtered = filtered.filter((course) =>
-        course.title.toLowerCase().includes(this.searchQuery.toLowerCase())
-      );
-    }
-
-    this.filteredCourses = filtered; // Update filteredCourses after applying filters and search
+  getCourseDurationInDays(startDate: string, endDate: string): string {
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    const diffInTime = end.getTime() - start.getTime();
+    const diffInMonths = diffInTime / (1000 * 3600 * 24);  // Approximate days in a month
+    return Math.ceil(diffInMonths).toString();
   }
+
+// Handle duration filter checkbox toggle
+toggleDurationFilter(duration: string) {
+  if (this.durationFilters.includes(duration)) {
+    this.durationFilters = this.durationFilters.filter(
+      (filter) => filter !== duration
+    );
+  } else {
+    this.durationFilters.push(duration);
+  }
+  this.applyFilters();
+}
+
+// Filter by duration in days
+applyFilters() {
+  let filtered = this.courses;
+
+  // Filter by category
+  if (this.selectedCategory && this.selectedCategory !== 'All') {
+    filtered = filtered.filter((course) =>
+      course.technology.includes(this.selectedCategory)
+    );
+  }
+
+  // Filter by difficulty
+  if (this.difficultyFilters.length) {
+    filtered = filtered.filter((course) =>
+      this.difficultyFilters.includes(course.difficulty)
+    );
+  }
+
+  // Filter by duration in days
+  if (this.durationFilters.length) {
+    filtered = filtered.filter((course) => {
+      const courseDurationInDays = Number(this.getCourseDurationInDays(course.startDate, course.endDate));
+
+      if (this.durationFilters.includes('5 days') && courseDurationInDays < 5) {
+        return true;
+      }
+      if (this.durationFilters.includes('5-10 days') && courseDurationInDays >= 5 && courseDurationInDays <= 10) {
+        return true;
+      }
+      if (this.durationFilters.includes('10+ days') && courseDurationInDays > 10) {
+        return true;
+      }
+      return false;
+    });
+  }
+
+  // Filter by rating
+  if (this.ratingFilters.length) {
+    filtered = filtered.filter((course) =>
+      this.ratingFilters.includes(course.rating)
+    );
+  }
+
+  // Filter by search query
+  if (this.searchQuery) {
+    filtered = filtered.filter((course) =>
+      course.title.toLowerCase().includes(this.searchQuery.toLowerCase())
+    );
+  }
+
+  this.filteredCourses = filtered; // Update filteredCourses after applying filters and search
+}
+
 
   // Handle difficulty filter checkbox toggle
   toggleDifficultyFilter(difficulty: string) {
@@ -123,17 +167,6 @@ export class ViewAllCoursesComponent implements OnInit {
     this.applyFilters();
   }
 
-  // Handle duration filter checkbox toggle
-  toggleDurationFilter(duration: string) {
-    if (this.durationFilters.includes(duration)) {
-      this.durationFilters = this.durationFilters.filter(
-        (filter) => filter !== duration
-      );
-    } else {
-      this.durationFilters.push(duration);
-    }
-    this.applyFilters();
-  }
 
   // Handle rating filter checkbox toggle
   toggleRatingFilter(rating: string) {
@@ -150,5 +183,10 @@ export class ViewAllCoursesComponent implements OnInit {
   // Search method to filter courses based on the search query
   search() {
     this.applyFilters();
+  }
+
+
+  bookmark_course(){
+    this.bookmark = !this.bookmark;
   }
 }

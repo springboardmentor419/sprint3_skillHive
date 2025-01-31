@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from "../../../shared/footer/footer.component";
-import { SideMenuComponent } from "../../../shared/side-menu/side-menu.component";
+import { FooterComponent } from "../footer/footer.component";
+import { SideMenuComponent } from "../side-menu/side-menu.component";
 import { HeaderComponent } from "../header/header.component";
 import { CandidateService } from '../../services/candidate.service';
 import { Router, RouterModule } from '@angular/router';

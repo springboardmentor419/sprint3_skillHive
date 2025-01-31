@@ -42,17 +42,18 @@
       <div class="filter">
         <h4>Duration</h4>
         <label>
-          <input type="checkbox" (change)="toggleDurationFilter('Less than 5 hours')" /> Less than 5 hours
+          <input type="checkbox" (change)="toggleDurationFilter('5 days')" /> Less than 5 days
         </label>
         <label>
-          <input type="checkbox" (change)="toggleDurationFilter('5 - 10 hours')" /> 5 - 10 hours
+          <input type="checkbox" (change)="toggleDurationFilter('5-10 days')" /> 5 - 10 days
         </label>
         <label>
-          <input type="checkbox" (change)="toggleDurationFilter('10+ hours')" /> 10+ hours
+          <input type="checkbox" (change)="toggleDurationFilter('10+ days')" /> More than 10 days
         </label>
       </div>
+      
 
-      <div class="filter">
+      <!-- <div class="filter">
         <h4>Rating</h4>
         <label>
           <input type="checkbox" (change)="toggleRatingFilter('4.5 and above')" /> 4.5 and above
@@ -66,10 +67,10 @@
         <label>
           <input type="checkbox" (change)="toggleRatingFilter('Below 3.5')" /> Below 3.5
         </label>
-      </div>
+      </div> -->
     </aside>
 
-    <main class="courses">
+    <main *ngIf="courses.length" class="courses">
       <div class="course-card" *ngFor="let course of filteredCourses">
         <img [src]="course.thumbnail" [alt]="course.title" />
         <h3 title="{{ course.name }}">
@@ -79,9 +80,17 @@
           {{ course.description }}
         </p>
         <p><strong>Instructor:</strong> {{ course.instructor || 'Not assigned' }}</p>
-        <p><strong>Duration:</strong> {{ course.duration || 'Not available' }}</p>
-        <button (click)="enroll(course)">Enroll Now</button>
+        <p><strong>Duration:</strong> {{ getCourseDurationInDays(course.startDate, course.endDate) }} Days</p>
+        <div class="actions">
+          <button [disabled]="userExist" (click)="enroll(course)">{{userExist ? 'Enrolled' :'Enroll Now'}}</button>
+          <img (click)="bookmark_course()" [src]="'../../../../assets/icons/' + (bookmark ? 'bookmark.svg' : 'bookmark-outline.svg')" title="Add to Bookmarked courses" alt="Bookmark">
+        </div>
       </div>
     </main>
+
+    <div *ngIf="!courses.length" class="loader-cont">
+      <div class="loader"></div>
+    </div>
   </div>
+
 </div>
