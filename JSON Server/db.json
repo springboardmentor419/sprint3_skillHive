@@ -318,7 +318,327 @@
             "scheduledDetails": {
               "duration": 60
             }
-          }
+          },
+          "assessmentCompletions": [
+            {
+              "userId": 1231243,
+              "completionDate": "2025-02-02T03:23:45.265Z",
+              "assessmentData": {
+                "assessmentName": "End Assessment",
+                "createdAt": "2025-01-23T04:43:33.260Z",
+                "scheduledDetails": {
+                  "duration": 60
+                },
+                "totalQuestions": 30,
+                "questions": [
+                  {
+                    "question": "What is Big Data?",
+                    "choices": [
+                      "Small datasets with minimal complexity",
+                      "Large datasets that traditional tools can't handle",
+                      "Only structured data from databases",
+                      "A type of software for data processing"
+                    ],
+                    "answer": "Large datasets that traditional tools can't handle",
+                    "userAnswer": "Small datasets with minimal complexity"
+                  },
+                  {
+                    "question": "Which of the following is NOT a characteristic of Big Data?",
+                    "choices": [
+                      "Volume",
+                      "Velocity",
+                      "Variety",
+                      "Simplicity"
+                    ],
+                    "answer": "Simplicity"
+                  },
+                  {
+                    "question": "What industry uses Big Data for predictive analytics and patient care improvement?",
+                    "choices": [
+                      "Healthcare",
+                      "Retail",
+                      "Finance",
+                      "Telecommunications"
+                    ],
+                    "answer": "Healthcare",
+                    "userAnswer": "Healthcare"
+                  },
+                  {
+                    "question": "What is a challenge in handling Big Data?",
+                    "choices": [
+                      "Data privacy",
+                      "Scalability",
+                      " Skill gap",
+                      "All of the above"
+                    ],
+                    "answer": "All of the above"
+                  },
+                  {
+                    "question": "Which tool is a framework for distributed processing of large datasets?",
+                    "choices": [
+                      "Hadoop",
+                      "Excel",
+                      "Apache NiFi",
+                      "Tableau"
+                    ],
+                    "answer": "Hadoop"
+                  },
+                  {
+                    "question": "What is HDFS designed for?",
+                    "choices": [
+                      "Managing real-time analytics",
+                      "Storing vast amounts of data with high throughput",
+                      "Performing machine learning",
+                      "Visualizing data"
+                    ],
+                    "answer": "Storing vast amounts of data with high throughput"
+                  },
+                  {
+                    "question": "Which component of Hadoop is responsible for job scheduling?",
+                    "choices": [
+                      "HDFS",
+                      "YARN",
+                      "Spark Core",
+                      "NoSQL"
+                    ],
+                    "answer": "YARN"
+                  },
+                  {
+                    "question": "Spark is primarily known for which feature?",
+                    "choices": [
+                      "Disk-based processing",
+                      "In-memory computing",
+                      "Database integration",
+                      "Data visualization"
+                    ],
+                    "answer": "In-memory computing"
+                  },
+                  {
+                    "question": "What does RDD stand for in Apache Spark?",
+                    "choices": [
+                      "Relational Data Descriptor",
+                      "Resilient Distributed Dataset",
+                      "Resource Data Driver",
+                      "Remote Dataset Directory"
+                    ],
+                    "answer": "Resilient Distributed Dataset"
+                  },
+                  {
+                    "question": "Which tool supports both batch and real-time data processing?",
+                    "choices": [
+                      "Hadoop",
+                      "Spark",
+                      "Apache NiFi",
+                      "Cassandra"
+                    ],
+                    "answer": "Spark"
+                  },
+                  {
+                    "question": "What type of database is MongoDB?",
+                    "choices": [
+                      "Relational",
+                      "NoSQL",
+                      "In-memory",
+                      "Analytical"
+                    ],
+                    "answer": "NoSQL"
+                  },
+                  {
+                    "question": "Which NoSQL database is known for high performance and scalability?",
+                    "choices": [
+                      "Cassandra",
+                      "MySQL",
+                      "PostgreSQL",
+                      "Oracle"
+                    ],
+                    "answer": "Cassandra"
+                  },
+                  {
+                    "question": "Which cloud-based data warehouse offers serverless architecture?",
+                    "choices": [
+                      "Amazon Redshift",
+                      "Google BigQuery",
+                      " Snowflake",
+                      "Microsoft Azure"
+                    ],
+                    "answer": "Google BigQuery"
+                  },
+                  {
+                    "question": "Which feature is central to HDFS?",
+                    "choices": [
+                      "Data encryption",
+                      "Fault tolerance",
+                      "Low latency",
+                      "Data compression"
+                    ],
+                    "answer": "Fault tolerance"
+                  },
+                  {
+                    "question": "What does Snowflake provide?",
+                    "choices": [
+                      "Only data lakes",
+                      "A cloud platform for data warehousing and sharing",
+                      "Machine learning tools",
+                      "A visualization dashboard"
+                    ],
+                    "answer": "A cloud platform for data warehousing and sharing"
+                  },
+                  {
+                    "question": "What distinguishes real-time processing from batch processing?",
+                    "choices": [
+                      "It handles only historical data",
+                      "It processes data as it arrives",
+                      "It uses Hadoop exclusively",
+                      "It supports offline analysis"
+                    ],
+                    "answer": "It processes data as it arrives"
+                  },
+                  {
+                    "question": "Which tool is used for real-time stream processing?",
+                    "choices": [
+                      "Apache Flink",
+                      "Tableau",
+                      "AWS S3",
+                      "Apache Sqoop"
+                    ],
+                    "answer": "Apache Flink"
+                  },
+                  {
+                    "question": "What is the purpose of Apache NiFi?",
+                    "choices": [
+                      "Data visualization",
+                      "Automating data flow between systems",
+                      "In-memory analytics",
+                      "Distributed storage"
+                    ],
+                    "answer": "Automating data flow between systems"
+                  },
+                  {
+                    "question": "What is MapReduce's primary function?",
+                    "choices": [
+                      "Data visualization",
+                      "Distributed data processing",
+                      "Real-time data ingestion",
+                      "Machine learning"
+                    ],
+                    "answer": "Distributed data processing"
+                  },
+                  {
+                    "question": "Which stage of MapReduce involves sorting and aggregating data?",
+                    "choices": [
+                      "Map phase",
+                      "Shuffle and Sort phase",
+                      "Reduce phase",
+                      "Transformation phase"
+                    ],
+                    "answer": "Shuffle and Sort phase"
+                  },
+                  {
+                    "question": "Which Python library is specifically designed for Big Data processing in Apache Spark?",
+                    "choices": [
+                      "Dask",
+                      "Pandas",
+                      "PySpark",
+                      "NumPy"
+                    ],
+                    "answer": "PySpark"
+                  },
+                  {
+                    "question": "What is the main advantage of using Scala for Apache Spark?",
+                    "choices": [
+                      "Easier syntax than Python",
+                      "Default language for Spark with functional programming features",
+                      "Better visualization tools",
+                      "Compatibility with SQL databases"
+                    ],
+                    "answer": "Default language for Spark with functional programming features"
+                  },
+                  {
+                    "question": "Which SQL-like tool is used for querying data stored in HDFS?",
+                    "choices": [
+                      "Presto",
+                      "Apache Hive",
+                      "Impala",
+                      "All of the above"
+                    ],
+                    "answer": "All of the above"
+                  },
+                  {
+                    "question": "What is the main purpose of MapReduce in Big Data processing?",
+                    "choices": [
+                      "Query optimization",
+                      "Converting input data into key-value pairs and aggregating them",
+                      "Creating machine learning models",
+                      "Generating data visualizations"
+                    ],
+                    "answer": "Converting input data into key-value pairs and aggregating them"
+                  },
+                  {
+                    "question": "What is the primary purpose of shell scripting in HDFS?",
+                    "choices": [
+                      "Automating data ingestion and managing directories",
+                      "Performing in-memory analytics",
+                      "Creating dashboards",
+                      "Writing machine learning algorithms"
+                    ],
+                    "answer": "Automating data ingestion and managing directories"
+                  },
+                  {
+                    "question": "What is Apache Sqoop used for in Big Data?",
+                    "choices": [
+                      "Transferring data between Hadoop and relational databases",
+                      "Real-time stream processing",
+                      "Data visualization",
+                      "Building machine learning models"
+                    ],
+                    "answer": "Transferring data between Hadoop and relational databases"
+                  },
+                  {
+                    "question": "Which tool is designed for streaming log data into HDFS or HBase?",
+                    "choices": [
+                      "Apache Flume",
+                      "Kafka Connect",
+                      "Sqoop",
+                      "Spark Streaming"
+                    ],
+                    "answer": "Apache Flume"
+                  },
+                  {
+                    "question": "What type of API is typically used to fetch data dynamically from web services?",
+                    "choices": [
+                      "REST API",
+                      "SOAP API",
+                      "SQL API",
+                      "File API"
+                    ],
+                    "answer": "REST API"
+                  },
+                  {
+                    "question": "What is a key challenge in real-time data integration?",
+                    "choices": [
+                      "High throughput and scalability",
+                      "Data visualization",
+                      "Reducing cost",
+                      "Handling offline data"
+                    ],
+                    "answer": "High throughput and scalability"
+                  },
+                  {
+                    "question": "Which tool supports real-time data pipeline automation with a drag-and-drop interface?",
+                    "choices": [
+                      "Apache NiFi",
+                      "Apache Flink",
+                      "AWS Redshift",
+                      "Spark SQL"
+                    ],
+                    "answer": "Apache NiFi"
+                  }
+                ],
+                "startAt": "Sun Feb 02 2025 08:53:37 GMT+0530 (India Standard Time)",
+                "completionAt": "Sun Feb 02 2025 08:53:45 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         }
       ],
       "id": "8cd5"
@@ -371,49 +691,656 @@
               "duration": 30
             }
           },
-          "assessmentCompletions": [
-            {
-              "userId": 1231243,
-              "completionDate": "2025-01-29T06:01:23.256Z",
-              "assessmentData": {
-                "assessmentName": "test - 2",
-                "createdAt": "2025-01-28T15:21:11.120Z",
-                "scheduledDetails": {
-                  "duration": 30
-                },
-                "totalQuestions": 2,
-                "questions": [
-                  {
-                    "question": "a",
-                    "choices": [
-                      "a",
-                      "b",
-                      "c",
-                      "d"
-                    ],
-                    "answer": "a",
-                    "userAnswer": "a"
-                  },
-                  {
-                    "question": "b",
-                    "choices": [
-                      "a",
-                      "b",
-                      "c",
-                      "d"
-                    ],
-                    "answer": "b",
-                    "userAnswer": "a"
-                  }
-                ],
-                "startAt": "Wed Jan 29 2025 11:31:05 GMT+0530 (India Standard Time)",
-                "completionAt": "Wed Jan 29 2025 11:31:23 GMT+0530 (India Standard Time)"
-              }
-            }
-          ]
+          "assessmentCompletions": []
         }
       ],
       "id": "1099"
+    },
+    {
+      "title": "Introduction to JavaScript",
+      "createdAt": "12-12-24",
+      "instructorId": 123,
+      "courseId": 544,
+      "assessment": [
+        {
+          "assessmentName": "JS end Assessment",
+          "questions": [
+            {
+              "question": "Which event is triggered when an HTML element loses focus?",
+              "choices": [
+                "onchange",
+                "onblur",
+                "onfocus",
+                "onlost"
+              ],
+              "answer": "onblur"
+            },
+            {
+              "question": "Which built-in object can be used to store key-value pairs in JavaScript?",
+              "choices": [
+                "Array",
+                "Object",
+                "Set",
+                "Map"
+              ],
+              "answer": "Object"
+            },
+            {
+              "question": "Which JavaScript method is used to select an HTML element by its ID?",
+              "choices": [
+                "getElementById()",
+                "querySelector()",
+                "getElementByClass()",
+                "selectById()"
+              ],
+              "answer": "getElementById()"
+            },
+            {
+              "question": "What does ECMAScript (ES) refer to?",
+              "choices": [
+                "A JavaScript framework",
+                "A JavaScript library",
+                "The standard for JavaScript",
+                "A database query language"
+              ],
+              "answer": "The standard for JavaScript"
+            },
+            {
+              "question": "Which operator is used for optional chaining in JavaScript?",
+              "choices": [
+                ".?",
+                "??",
+                "=>",
+                "::"
+              ],
+              "answer": "??"
+            },
+            {
+              "question": "Which of the following is NOT a JavaScript data type?",
+              "choices": [
+                "String",
+                "Boolean",
+                "Integer",
+                "Undefined"
+              ],
+              "answer": "Integer"
+            },
+            {
+              "question": "Which symbol is used for single-line comments in JavaScript?",
+              "choices": [
+                "//",
+                "/*",
+                "#",
+                "<!--"
+              ],
+              "answer": "//"
+            },
+            {
+              "question": "What is the default return value of a function that does not explicitly return anything?",
+              "choices": [
+                "null",
+                "0",
+                "undefined",
+                "false"
+              ],
+              "answer": "undefined"
+            },
+            {
+              "question": "Which statement is true about arrow functions in JavaScript?",
+              "choices": [
+                "They always have their own 'this' context",
+                "They inherit 'this' from their surrounding scope",
+                "They cannot take parameters",
+                "They must always have a return statement"
+              ],
+              "answer": "They inherit 'this' from their surrounding scope"
+            },
+            {
+              "question": "Which year was JavaScript created?",
+              "choices": [
+                "1991",
+                "1995",
+                "2000",
+                "2005"
+              ],
+              "answer": "1995"
+            },
+            {
+              "question": "Which method is used to remove the last element from an array?",
+              "choices": [
+                "pop()",
+                "remove()",
+                "delete()",
+                "shift()"
+              ],
+              "answer": "pop()"
+            },
+            {
+              "question": "What is the output of 'typeof null' in JavaScript?",
+              "choices": [
+                "null",
+                "object",
+                "undefined",
+                "string"
+              ],
+              "answer": "object"
+            },
+            {
+              "question": "Which keyword is used to handle exceptions in JavaScript?",
+              "choices": [
+                "catch",
+                "throw",
+                "try",
+                "error"
+              ],
+              "answer": "try"
+            },
+            {
+              "question": "Which keyword is used to define a function in JavaScript?",
+              "choices": [
+                "function",
+                "def",
+                "method",
+                "fun"
+              ],
+              "answer": "function"
+            },
+            {
+              "question": "Which function is used to print something in the browser console?",
+              "choices": [
+                "console.log()",
+                "print()",
+                "log()",
+                "display()"
+              ],
+              "answer": "console.log()"
+            },
+            {
+              "question": "Which keyword is used to declare a constant variable in JavaScript?",
+              "choices": [
+                "var",
+                "let",
+                "const",
+                "static"
+              ],
+              "answer": "const"
+            },
+            {
+              "question": "What is JavaScript primarily used for?",
+              "choices": [
+                "Styling web pages",
+                "Adding interactivity to web pages",
+                "Creating database schemas",
+                "Managing server configurations"
+              ],
+              "answer": "Adding interactivity to web pages"
+            },
+            {
+              "question": "Which of the following is NOT a falsy value in JavaScript?",
+              "choices": [
+                "0",
+                "''",
+                "null",
+                "'false'"
+              ],
+              "answer": "'false'"
+            },
+            {
+              "question": "Which method is used to check if a string contains a specific substring?",
+              "choices": [
+                "includes()",
+                "contains()",
+                "search()",
+                "find()"
+              ],
+              "answer": "includes()"
+            },
+            {
+              "question": "Which of the following loops does NOT exist in JavaScript?",
+              "choices": [
+                "for",
+                "while",
+                "foreach",
+                "repeat"
+              ],
+              "answer": "repeat"
+            },
+            {
+              "question": "Which object represents the global scope in a browser environment?",
+              "choices": [
+                "window",
+                "global",
+                "document",
+                "navigator"
+              ],
+              "answer": "window"
+            },
+            {
+              "question": "What will '5' + 3 evaluate to in JavaScript?",
+              "choices": [
+                "8",
+                "53",
+                "Error",
+                "None"
+              ],
+              "answer": "53"
+            },
+            {
+              "question": "Which method is used to add an element to the end of an array?",
+              "choices": [
+                "push()",
+                "append()",
+                "add()",
+                "insert()"
+              ],
+              "answer": "push()"
+            },
+            {
+              "question": "How do you check if a variable is an array in JavaScript?",
+              "choices": [
+                "typeof var === 'array'",
+                "var.isArray()",
+                "Array.isArray(var)",
+                "instanceof Array"
+              ],
+              "answer": "Array.isArray(var)"
+            },
+            {
+              "question": "Which operator is used to compare values AND types in JavaScript?",
+              "choices": [
+                "==",
+                "===",
+                "!=",
+                "<>"
+              ],
+              "answer": "==="
+            },
+            {
+              "question": "Which function is used to execute a function after a specified delay?",
+              "choices": [
+                "setInterval()",
+                "setTimeout()",
+                "delay()",
+                "wait()"
+              ],
+              "answer": "setTimeout()"
+            },
+            {
+              "question": "Who created JavaScript?",
+              "choices": [
+                "Tim Berners-Lee",
+                "Brendan Eich",
+                "Dennis Ritchie",
+                "Guido van Rossum"
+              ],
+              "answer": "Brendan Eich"
+            },
+            {
+              "question": "What is the purpose of the JSON.stringify() method?",
+              "choices": [
+                "To parse a JSON string",
+                "To convert an object to a JSON string",
+                "To validate JSON",
+                "To compress JSON"
+              ],
+              "answer": "To convert an object to a JSON string"
+            },
+            {
+              "question": "Which method is used to convert a string to an integer in JavaScript?",
+              "choices": [
+                "parseInt()",
+                "toInteger()",
+                "int()",
+                "Number()"
+              ],
+              "answer": "parseInt()"
+            },
+            {
+              "question": "What does the 'this' keyword refer to in JavaScript?",
+              "choices": [
+                "The previous function",
+                "The global object",
+                "The current object",
+                "A new instance of an object"
+              ],
+              "answer": "The current object"
+            }
+          ],
+          "assessmentID": "7f3b92c8-1d6a-4e5f-a8c2-9d71b4f3e6a7",
+          "createdAt": "2025-01-28T15:21:11.120Z",
+          "schedule": {
+            "isScheduled": true,
+            "scheduledDetails": {
+              "duration": 60
+            }
+          },
+          "assessmentCompletions": []
+        }
+      ],
+      "id": "afea"
+    },
+    {
+      "title": "React Advanced",
+      "createdAt": "12-12-24",
+      "instructorId": 123,
+      "courseId": 545,
+      "assessment": [
+        {
+          "assessmentName": "React Advanced End Assessment",
+          "questions": [
+            {
+              "question": "What is JavaScript primarily used for?",
+              "choices": [
+                "Styling web pages",
+                "Adding interactivity to web pages",
+                "Creating database schemas",
+                "Managing server configurations"
+              ],
+              "answer": "Adding interactivity to web pages"
+            },
+            {
+              "question": "Who created JavaScript?",
+              "choices": [
+                "Tim Berners-Lee",
+                "Brendan Eich",
+                "Dennis Ritchie",
+                "Guido van Rossum"
+              ],
+              "answer": "Brendan Eich"
+            },
+            {
+              "question": "Which year was JavaScript created?",
+              "choices": [
+                "1991",
+                "1995",
+                "2000",
+                "2005"
+              ],
+              "answer": "1995"
+            },
+            {
+              "question": "What does ECMAScript (ES) refer to?",
+              "choices": [
+                "A JavaScript framework",
+                "A JavaScript library",
+                "The standard for JavaScript",
+                "A database query language"
+              ],
+              "answer": "The standard for JavaScript"
+            },
+            {
+              "question": "Which keyword is used to declare a constant variable in JavaScript?",
+              "choices": [
+                "var",
+                "let",
+                "const",
+                "static"
+              ],
+              "answer": "const"
+            },
+            {
+              "question": "Which symbol is used for single-line comments in JavaScript?",
+              "choices": [
+                "//",
+                "/*",
+                "#",
+                "<!--"
+              ],
+              "answer": "//"
+            },
+            {
+              "question": "Which function is used to print something in the browser console?",
+              "choices": [
+                "console.log()",
+                "print()",
+                "log()",
+                "display()"
+              ],
+              "answer": "console.log()"
+            },
+            {
+              "question": "What is the output of 'typeof null' in JavaScript?",
+              "choices": [
+                "null",
+                "object",
+                "undefined",
+                "string"
+              ],
+              "answer": "object"
+            },
+            {
+              "question": "Which of the following is NOT a JavaScript data type?",
+              "choices": [
+                "String",
+                "Boolean",
+                "Integer",
+                "Undefined"
+              ],
+              "answer": "Integer"
+            },
+            {
+              "question": "Which JavaScript method is used to select an HTML element by its ID?",
+              "choices": [
+                "getElementById()",
+                "querySelector()",
+                "getElementByClass()",
+                "selectById()"
+              ],
+              "answer": "getElementById()"
+            },
+            {
+              "question": "What does the 'this' keyword refer to in JavaScript?",
+              "choices": [
+                "The previous function",
+                "The global object",
+                "The current object",
+                "A new instance of an object"
+              ],
+              "answer": "The current object"
+            },
+            {
+              "question": "Which method is used to convert a string to an integer in JavaScript?",
+              "choices": [
+                "parseInt()",
+                "toInteger()",
+                "int()",
+                "Number()"
+              ],
+              "answer": "parseInt()"
+            },
+            {
+              "question": "Which of the following loops does NOT exist in JavaScript?",
+              "choices": [
+                "for",
+                "while",
+                "foreach",
+                "repeat"
+              ],
+              "answer": "repeat"
+            },
+            {
+              "question": "Which operator is used to compare values AND types in JavaScript?",
+              "choices": [
+                "==",
+                "===",
+                "!=",
+                "<>"
+              ],
+              "answer": "==="
+            },
+            {
+              "question": "Which keyword is used to define a function in JavaScript?",
+              "choices": [
+                "function",
+                "def",
+                "method",
+                "fun"
+              ],
+              "answer": "function"
+            },
+            {
+              "question": "Which built-in object can be used to store key-value pairs in JavaScript?",
+              "choices": [
+                "Array",
+                "Object",
+                "Set",
+                "Map"
+              ],
+              "answer": "Object"
+            },
+            {
+              "question": "Which method is used to add an element to the end of an array?",
+              "choices": [
+                "push()",
+                "append()",
+                "add()",
+                "insert()"
+              ],
+              "answer": "push()"
+            },
+            {
+              "question": "What will '5' + 3 evaluate to in JavaScript?",
+              "choices": [
+                "8",
+                "53",
+                "Error",
+                "None"
+              ],
+              "answer": "53"
+            },
+            {
+              "question": "Which method is used to remove the last element from an array?",
+              "choices": [
+                "pop()",
+                "remove()",
+                "delete()",
+                "shift()"
+              ],
+              "answer": "pop()"
+            },
+            {
+              "question": "Which function is used to execute a function after a specified delay?",
+              "choices": [
+                "setInterval()",
+                "setTimeout()",
+                "delay()",
+                "wait()"
+              ],
+              "answer": "setTimeout()"
+            },
+            {
+              "question": "How do you check if a variable is an array in JavaScript?",
+              "choices": [
+                "typeof variable === 'array'",
+                "variable.isArray()",
+                "Array.isArray(variable)",
+                "instanceof Array"
+              ],
+              "answer": "Array.isArray(variable)"
+            },
+            {
+              "question": "What is the default return value of a function that does not explicitly return anything?",
+              "choices": [
+                "null",
+                "0",
+                "undefined",
+                "false"
+              ],
+              "answer": "undefined"
+            },
+            {
+              "question": "Which keyword is used to handle exceptions in JavaScript?",
+              "choices": [
+                "catch",
+                "throw",
+                "try",
+                "error"
+              ],
+              "answer": "try"
+            },
+            {
+              "question": "Which event is triggered when an HTML element loses focus?",
+              "choices": [
+                "onchange",
+                "onblur",
+                "onfocus",
+                "onlost"
+              ],
+              "answer": "onblur"
+            },
+            {
+              "question": "What is the purpose of the JSON.stringify() method?",
+              "choices": [
+                "To parse a JSON string",
+                "To convert an object to a JSON string",
+                "To validate JSON",
+                "To compress JSON"
+              ],
+              "answer": "To convert an object to a JSON string"
+            },
+            {
+              "question": "Which method is used to check if a string contains a specific substring?",
+              "choices": [
+                "includes()",
+                "contains()",
+                "search()",
+                "find()"
+              ],
+              "answer": "includes()"
+            },
+            {
+              "question": "Which object represents the global scope in a browser environment?",
+              "choices": [
+                "window",
+                "global",
+                "document",
+                "navigator"
+              ],
+              "answer": "window"
+            },
+            {
+              "question": "Which statement is true about arrow functions in JavaScript?",
+              "choices": [
+                "They always have their own 'this' context",
+                "They inherit 'this' from their surrounding scope",
+                "They cannot take parameters",
+                "They must always have a return statement"
+              ],
+              "answer": "They inherit 'this' from their surrounding scope"
+            },
+            {
+              "question": "Which of the following is NOT a falsy value in JavaScript?",
+              "choices": [
+                "0",
+                "''",
+                "null",
+                "'false'"
+              ],
+              "answer": "'false'"
+            },
+            {
+              "question": "Which operator is used for optional chaining in JavaScript?",
+              "choices": [
+                ".?",
+                "??",
+                "=>",
+                "::"
+              ],
+              "answer": "?. (optional chaining)"
+            }
+          ],
+          "assessmentID": "a14d85f2-3b79-47c1-b5e9-2c60d8a3f4b1",
+          "createdAt": "2025-01-28T15:21:11.120Z",
+          "schedule": {
+            "isScheduled": true,
+            "scheduledDetails": {
+              "duration": 60
+            }
+          },
+          "assessmentCompletions": []
+        }
+      ],
+      "id": "412f"
     }
   ],
   "candidates": [
@@ -428,57 +1355,347 @@
           "courseId": 542,
           "entrolled": "12-12-24",
           "completionPercentage": 100,
-          "assessmentStatus": false,
-          "assessmentData": []
+          "assessmentStatus": true,
+          "assessmentData": [
+            {
+              "assessmentID": "146e7dc8-4357-42e9-8a2a-9f08957d0e7c",
+              "completionDate": "2025-02-02T03:23:45.265Z",
+              "assessmentData": {
+                "assessmentName": "End Assessment",
+                "createdAt": "2025-01-23T04:43:33.260Z",
+                "scheduledDetails": {
+                  "duration": 60
+                },
+                "totalQuestions": 30,
+                "questions": [
+                  {
+                    "question": "What is Big Data?",
+                    "choices": [
+                      "Small datasets with minimal complexity",
+                      "Large datasets that traditional tools can't handle",
+                      "Only structured data from databases",
+                      "A type of software for data processing"
+                    ],
+                    "answer": "Large datasets that traditional tools can't handle",
+                    "userAnswer": "Small datasets with minimal complexity"
+                  },
+                  {
+                    "question": "Which of the following is NOT a characteristic of Big Data?",
+                    "choices": [
+                      "Volume",
+                      "Velocity",
+                      "Variety",
+                      "Simplicity"
+                    ],
+                    "answer": "Simplicity"
+                  },
+                  {
+                    "question": "What industry uses Big Data for predictive analytics and patient care improvement?",
+                    "choices": [
+                      "Healthcare",
+                      "Retail",
+                      "Finance",
+                      "Telecommunications"
+                    ],
+                    "answer": "Healthcare",
+                    "userAnswer": "Healthcare"
+                  },
+                  {
+                    "question": "What is a challenge in handling Big Data?",
+                    "choices": [
+                      "Data privacy",
+                      "Scalability",
+                      " Skill gap",
+                      "All of the above"
+                    ],
+                    "answer": "All of the above"
+                  },
+                  {
+                    "question": "Which tool is a framework for distributed processing of large datasets?",
+                    "choices": [
+                      "Hadoop",
+                      "Excel",
+                      "Apache NiFi",
+                      "Tableau"
+                    ],
+                    "answer": "Hadoop"
+                  },
+                  {
+                    "question": "What is HDFS designed for?",
+                    "choices": [
+                      "Managing real-time analytics",
+                      "Storing vast amounts of data with high throughput",
+                      "Performing machine learning",
+                      "Visualizing data"
+                    ],
+                    "answer": "Storing vast amounts of data with high throughput"
+                  },
+                  {
+                    "question": "Which component of Hadoop is responsible for job scheduling?",
+                    "choices": [
+                      "HDFS",
+                      "YARN",
+                      "Spark Core",
+                      "NoSQL"
+                    ],
+                    "answer": "YARN"
+                  },
+                  {
+                    "question": "Spark is primarily known for which feature?",
+                    "choices": [
+                      "Disk-based processing",
+                      "In-memory computing",
+                      "Database integration",
+                      "Data visualization"
+                    ],
+                    "answer": "In-memory computing"
+                  },
+                  {
+                    "question": "What does RDD stand for in Apache Spark?",
+                    "choices": [
+                      "Relational Data Descriptor",
+                      "Resilient Distributed Dataset",
+                      "Resource Data Driver",
+                      "Remote Dataset Directory"
+                    ],
+                    "answer": "Resilient Distributed Dataset"
+                  },
+                  {
+                    "question": "Which tool supports both batch and real-time data processing?",
+                    "choices": [
+                      "Hadoop",
+                      "Spark",
+                      "Apache NiFi",
+                      "Cassandra"
+                    ],
+                    "answer": "Spark"
+                  },
+                  {
+                    "question": "What type of database is MongoDB?",
+                    "choices": [
+                      "Relational",
+                      "NoSQL",
+                      "In-memory",
+                      "Analytical"
+                    ],
+                    "answer": "NoSQL"
+                  },
+                  {
+                    "question": "Which NoSQL database is known for high performance and scalability?",
+                    "choices": [
+                      "Cassandra",
+                      "MySQL",
+                      "PostgreSQL",
+                      "Oracle"
+                    ],
+                    "answer": "Cassandra"
+                  },
+                  {
+                    "question": "Which cloud-based data warehouse offers serverless architecture?",
+                    "choices": [
+                      "Amazon Redshift",
+                      "Google BigQuery",
+                      " Snowflake",
+                      "Microsoft Azure"
+                    ],
+                    "answer": "Google BigQuery"
+                  },
+                  {
+                    "question": "Which feature is central to HDFS?",
+                    "choices": [
+                      "Data encryption",
+                      "Fault tolerance",
+                      "Low latency",
+                      "Data compression"
+                    ],
+                    "answer": "Fault tolerance"
+                  },
+                  {
+                    "question": "What does Snowflake provide?",
+                    "choices": [
+                      "Only data lakes",
+                      "A cloud platform for data warehousing and sharing",
+                      "Machine learning tools",
+                      "A visualization dashboard"
+                    ],
+                    "answer": "A cloud platform for data warehousing and sharing"
+                  },
+                  {
+                    "question": "What distinguishes real-time processing from batch processing?",
+                    "choices": [
+                      "It handles only historical data",
+                      "It processes data as it arrives",
+                      "It uses Hadoop exclusively",
+                      "It supports offline analysis"
+                    ],
+                    "answer": "It processes data as it arrives"
+                  },
+                  {
+                    "question": "Which tool is used for real-time stream processing?",
+                    "choices": [
+                      "Apache Flink",
+                      "Tableau",
+                      "AWS S3",
+                      "Apache Sqoop"
+                    ],
+                    "answer": "Apache Flink"
+                  },
+                  {
+                    "question": "What is the purpose of Apache NiFi?",
+                    "choices": [
+                      "Data visualization",
+                      "Automating data flow between systems",
+                      "In-memory analytics",
+                      "Distributed storage"
+                    ],
+                    "answer": "Automating data flow between systems"
+                  },
+                  {
+                    "question": "What is MapReduce's primary function?",
+                    "choices": [
+                      "Data visualization",
+                      "Distributed data processing",
+                      "Real-time data ingestion",
+                      "Machine learning"
+                    ],
+                    "answer": "Distributed data processing"
+                  },
+                  {
+                    "question": "Which stage of MapReduce involves sorting and aggregating data?",
+                    "choices": [
+                      "Map phase",
+                      "Shuffle and Sort phase",
+                      "Reduce phase",
+                      "Transformation phase"
+                    ],
+                    "answer": "Shuffle and Sort phase"
+                  },
+                  {
+                    "question": "Which Python library is specifically designed for Big Data processing in Apache Spark?",
+                    "choices": [
+                      "Dask",
+                      "Pandas",
+                      "PySpark",
+                      "NumPy"
+                    ],
+                    "answer": "PySpark"
+                  },
+                  {
+                    "question": "What is the main advantage of using Scala for Apache Spark?",
+                    "choices": [
+                      "Easier syntax than Python",
+                      "Default language for Spark with functional programming features",
+                      "Better visualization tools",
+                      "Compatibility with SQL databases"
+                    ],
+                    "answer": "Default language for Spark with functional programming features"
+                  },
+                  {
+                    "question": "Which SQL-like tool is used for querying data stored in HDFS?",
+                    "choices": [
+                      "Presto",
+                      "Apache Hive",
+                      "Impala",
+                      "All of the above"
+                    ],
+                    "answer": "All of the above"
+                  },
+                  {
+                    "question": "What is the main purpose of MapReduce in Big Data processing?",
+                    "choices": [
+                      "Query optimization",
+                      "Converting input data into key-value pairs and aggregating them",
+                      "Creating machine learning models",
+                      "Generating data visualizations"
+                    ],
+                    "answer": "Converting input data into key-value pairs and aggregating them"
+                  },
+                  {
+                    "question": "What is the primary purpose of shell scripting in HDFS?",
+                    "choices": [
+                      "Automating data ingestion and managing directories",
+                      "Performing in-memory analytics",
+                      "Creating dashboards",
+                      "Writing machine learning algorithms"
+                    ],
+                    "answer": "Automating data ingestion and managing directories"
+                  },
+                  {
+                    "question": "What is Apache Sqoop used for in Big Data?",
+                    "choices": [
+                      "Transferring data between Hadoop and relational databases",
+                      "Real-time stream processing",
+                      "Data visualization",
+                      "Building machine learning models"
+                    ],
+                    "answer": "Transferring data between Hadoop and relational databases"
+                  },
+                  {
+                    "question": "Which tool is designed for streaming log data into HDFS or HBase?",
+                    "choices": [
+                      "Apache Flume",
+                      "Kafka Connect",
+                      "Sqoop",
+                      "Spark Streaming"
+                    ],
+                    "answer": "Apache Flume"
+                  },
+                  {
+                    "question": "What type of API is typically used to fetch data dynamically from web services?",
+                    "choices": [
+                      "REST API",
+                      "SOAP API",
+                      "SQL API",
+                      "File API"
+                    ],
+                    "answer": "REST API"
+                  },
+                  {
+                    "question": "What is a key challenge in real-time data integration?",
+                    "choices": [
+                      "High throughput and scalability",
+                      "Data visualization",
+                      "Reducing cost",
+                      "Handling offline data"
+                    ],
+                    "answer": "High throughput and scalability"
+                  },
+                  {
+                    "question": "Which tool supports real-time data pipeline automation with a drag-and-drop interface?",
+                    "choices": [
+                      "Apache NiFi",
+                      "Apache Flink",
+                      "AWS Redshift",
+                      "Spark SQL"
+                    ],
+                    "answer": "Apache NiFi"
+                  }
+                ],
+                "startAt": "Sun Feb 02 2025 08:53:37 GMT+0530 (India Standard Time)",
+                "completionAt": "Sun Feb 02 2025 08:53:45 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         },
         {
           "title": "DevOps for Beginners",
           "createdAt": "12-12-24",
-          "instructorId": 123542,
+          "instructorId": 123,
           "entrolled": "12-12-24",
           "courseId": 543,
           "completionPercentage": 100,
-          "assessmentStatus": true,
-          "assessmentData": [
-            {
-              "assessmentID": "32a4bcf1-055d-41c3-bfb1-3b83f0a154da",
-              "completionDate": "2025-01-29T06:01:23.256Z",
-              "assessmentData": {
-                "assessmentName": "test - 2",
-                "createdAt": "2025-01-28T15:21:11.120Z",
-                "scheduledDetails": {
-                  "duration": 30
-                },
-                "totalQuestions": 2,
-                "questions": [
-                  {
-                    "question": "a",
-                    "choices": [
-                      "a",
-                      "b",
-                      "c",
-                      "d"
-                    ],
-                    "answer": "a",
-                    "userAnswer": "a"
-                  },
-                  {
-                    "question": "b",
-                    "choices": [
-                      "a",
-                      "b",
-                      "c",
-                      "d"
-                    ],
-                    "answer": "b",
-                    "userAnswer": "a"
-                  }
-                ],
-                "startAt": "Wed Jan 29 2025 11:31:05 GMT+0530 (India Standard Time)",
-                "completionAt": "Wed Jan 29 2025 11:31:23 GMT+0530 (India Standard Time)"
-              }
-            }
-          ]
+          "assessmentStatus": false,
+          "assessmentData": []
+        },
+        {
+          "title": "Introduction to JavaScript",
+          "createdAt": "12-12-24",
+          "instructorId": 123,
+          "entrolled": "12-12-24",
+          "courseId": 544,
+          "completionPercentage": 90,
+          "assessmentStatus": false,
+          "assessmentData": []
         }
       ],
       "id": "e74c"
