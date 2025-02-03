@@ -1,6 +1,74 @@
 {
-  "admin":[],
-  "instructors":[],
-  "candidates":[],
-  "courses":[],
+  "users": [
+    {
+      "id": "b5f2",
+      "fullName": "Bhanu Pratap Singh",
+      "email": "bhanusingh09@gmail.com",
+      "password": "BhanuPS09"
+    },
+    {
+      "id": "0fff",
+      "fullName": "Manoj",
+      "email": "manoj10@gmail.com",
+      "password": "Manoj10"
+    },
+    {
+      "id": "4457",
+      "fullName": "Akshari",
+      "email": "akshari10@gmail.com",
+      "password": "Akshari10"
+    },
+    {
+      "id": "1f51",
+      "fullName": "Aniketh",
+      "email": "aniketh10@gmail.com",
+      "password": "Aniketh10"
+    },
+    {
+      "id": "6af0",
+      "fullName": "Mentor",
+      "email": "mentor10@gmail.com",
+      "password": "Mentor10"
+    },
+    {
+      "id": "763d",
+      "fullName": "mentor3",
+      "email": "mentor310@gmail.com",
+      "password": "Mentor310"
+    },
+    {
+      "id": "b24e",
+      "fullName": "Aarti",
+      "email": "aarti10@gmail.com",
+      "password": "Aarti10"
+    }
+  ],
+  "admins": [
+    {
+      "id": "864f",
+      "fullName": "Admin",
+      "email": "admin10@gmail.com",
+      "password": "Admin10"
+    }
+  ],
+  "instructors": [
+    {
+      "id": "4225",
+      "fullName": "Instructor1",
+      "email": "instructor01@gmail.com",
+      "password": "Instructor10"
+    },
+    {
+      "id": "6db2",
+      "fullName": "Instructor2",
+      "email": "instructor02@gmail.com",
+      "password": "Instructor10"
+    }
+  ],
+  "newsletteremails": [
+    {
+      "id": "3567",
+      "email": "bhanu@gmail.com"
+    }
+  ]
 }
