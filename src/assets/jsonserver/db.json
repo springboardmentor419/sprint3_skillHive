@@ -598,5 +598,11 @@
       ],
       "id": "6c62"
     }
+  ],
+  "newsletteremails": [
+    {
+      "id": "3567",
+      "email": "bhanu@gmail.com"
+    }
   ]
 }
