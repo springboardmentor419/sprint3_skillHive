@@ -19,7 +19,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.candidateservice.getAdditionalDetailsByEmail(localStorage.getItem('candidateEmail')).subscribe(
       (response)=>{
-        this.userProfile = response?.profilePicture
+        // this.userProfile = response?.profilePicture
       },
       (error)=>{
         console.log(error)

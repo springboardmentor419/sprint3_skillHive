@@ -3,11 +3,12 @@ import { InstructorService } from '../../services/instructor.service';
 import { CommonModule } from '@angular/common';
 import { shortlisted_instructor } from '../../models/shortlisted_instrtuctor.model';
 import { AfterapplyBannerComponent } from '../afterapply-banner/afterapply-banner.component';
+import { FooterComponent } from '../../../authentication/components/footer/footer.component';
 
 @Component({
   selector: 'app-instructor-applied',
   standalone: true,
-  imports: [CommonModule,AfterapplyBannerComponent],
+  imports: [CommonModule,AfterapplyBannerComponent,FooterComponent],
   templateUrl: './instructor-applied.component.html',
   styleUrls: ['./instructor-applied.component.css']
 })

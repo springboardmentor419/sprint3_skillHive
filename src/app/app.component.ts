@@ -1,16 +1,46 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { SideMenuComponent } from "../app/candidates/components/side-menu/side-menu.component"
+import { AuthService } from './authentication/services/auth.service';
+import { HeaderComponent } from "./authentication/components/header/header.component";
+import { SidemenuComponent } from './authentication/components/sidemenu/sidemenu.component';
+import { CommonModule } from '@angular/common';
+import { SideMenuComponent } from '../app/candidates/components/side-menu/side-menu.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterModule, FormsModule, SideMenuComponent],
+  imports: [RouterModule, FormsModule, SidemenuComponent, HeaderComponent, CommonModule, SideMenuComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Skillhive Learning Nexus';
+  title = 'Skill Hive Learning Nexus';
+  authsideMenu: boolean = false;
+  candidateSideMenu: boolean = false;
+  loginData = {
+    islogged: false,
+    user: null,
+    name: null,
+    email: null,
+    id: null,
+  };
+  constructor(public authService: AuthService) {
+    this.loginData = this.authService.isAuthenticated();
+  }
+
+  sideMenuEventListener(e) {
+    if (this.loginData.user == "admins") {
+      this.authsideMenu = e;
+    } else if (this.loginData.user == "users") {
+      this.candidateSideMenu = e;
+    }
+
+  }
+
+  closeSideMenu(e) {
+    this.authsideMenu = false;
+    this.candidateSideMenu = false;
+  }
 }
 

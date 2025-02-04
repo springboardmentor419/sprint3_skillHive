@@ -90,7 +90,7 @@ export class ChangePasswordComponent {
     this.candidateService.changePassword(email, this.currentPassword, this.newPassword).subscribe({
       next: (response) => {
         this.successMessage = 'Password changed successfully!';
-        setTimeout(() => this.router.navigate(['/dashboard']), 2000);
+        setTimeout(() => this.router.navigate(['/candidate/dashboard']), 2000);
       },
       error: (error) => {
         this.errorMessage = 'Failed to change password. Please try again.';

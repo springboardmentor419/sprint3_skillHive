@@ -24,7 +24,7 @@ export class UpdateProfileComponent implements OnInit {
   constructor(private candidateService: CandidateService, private router: Router) {}
 
   ngOnInit() {
-    const email = localStorage.getItem('candidateEmail');
+    const email = this.candidateService.getlocalStorage();
     console.log('Email from localStorage:', email); // Debugging line
 
     if (email) {
@@ -129,7 +129,7 @@ export class UpdateProfileComponent implements OnInit {
       next: () => {
         alert('Profile updated successfully!')
         this.successMessage = 'Profile updated successfully!';
-        setTimeout(() => this.router.navigate(['/dashboard']), 2000);
+        setTimeout(() => this.router.navigate(['/candidate/dashboard']), 2000);
       },
       error: (error) => {
         console.error('Error updating profile:', error);

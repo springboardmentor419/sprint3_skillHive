@@ -1,6 +1,6 @@
 .aboutUs {
-  height: 550px;
   margin-top: 50px;
+  height: 516px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -9,7 +9,6 @@
     display: flex;
     flex-direction: column;
     width: 572px;
-    height: 532px;
     padding-top: 30px;
 
     .weekendUx {
@@ -40,7 +39,6 @@
   .aboutUsImg {
     position: relative;
     width: 530px;
-    height: 530px;
     padding: 20px;
 
     .officeImg1,
@@ -71,7 +69,6 @@
 }
 
 .features {
-  height: 662px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -81,7 +78,6 @@
     display: flex;
     flex-direction: column;
     width: 572px;
-    height: 622px;
     padding-top: 30px;
 
     h5 {
@@ -131,6 +127,7 @@
 .benefits {
   display: flex;
   flex-direction: column;
+  margin: 70px 0px 10px 0px;
   .benefitsHeading {
     display: flex;
     flex-direction: column;
@@ -208,3 +205,4 @@
     }
   }
 }
+

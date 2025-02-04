@@ -2,16 +2,11 @@
   <mat-toolbar class="header">
     <div class="leftContainer">
       <div class="menuIcon">
-        <mat-icon
-          *ngIf="!(loginData.islogged && loginData.user == 'admins')"
-          (click)="toggleSideMenu()"
+        <mat-icon *ngIf="loginData.islogged" (click)="toggleSideMenu()"
           >menu</mat-icon
         >
       </div>
-      <div
-        *ngIf="loginData.islogged && loginData.user == 'admins'"
-        class="logo"
-      >
+      <div *ngIf="!loginData.islogged" class="logo">
         <svg
           width="30px"
           height="30px"
@@ -56,13 +51,13 @@
       </div>
       <div class="headerLinks"><a href="/home">Home</a></div>
       <div class="headerLinks"><a href="/about">About us</a></div>
-      <div class="headerLinks">Courses</div>
+      <div class="headerLinks"><a href="/candidate-view">Courses</a></div>
       <div class="headerLinks"><a href="/contact">Contact us</a></div>
       <!-- <span *ngIf="false" class="example-spacer"></span> -->
     </div>
     <div class="centerRightContainer">
       <div class="centerWrapper">
-        <div class="centerContainer" *ngIf="!loginData.islogged">
+        <div class="centerContainer" *ngIf="loginData.islogged">
           <mat-icon>search</mat-icon>
           <form class="searchFormContainer" [formGroup]="searchForm">
             <input
@@ -79,7 +74,7 @@
       </div>
       <div class="rightContainer">
         <button
-          *ngIf="loginData.islogged"
+          *ngIf="!loginData.islogged"
           mat-flat-button
           class="headerBtn"
           (click)="signIn()"
@@ -87,7 +82,7 @@
           Sign in
         </button>
         <button
-          *ngIf="loginData.islogged"
+          *ngIf="!loginData.islogged"
           mat-flat-button
           class="headerBtn"
           (click)="signUp()"
@@ -95,7 +90,7 @@
           Create free account
         </button>
         <button
-          *ngIf="!loginData.islogged"
+          *ngIf="loginData.islogged"
           mat-flat-button
           class="profileBtn"
           (click)="openDropdown()"
@@ -108,7 +103,7 @@
               />
             </div>
             <div class="usernName">
-              {{ loginData.name }}
+              {{ loginData.name.split(" ")[0] }}
             </div>
             <div *ngIf="!opened" class="toggleArrow">
               <mat-icon>keyboard_arrow_down</mat-icon>
@@ -122,28 +117,6 @@
     </div>
   </mat-toolbar>
   <div class="search_profile">
-    <div class="sideMenuContainer">
-      <div class="sideMenu" *ngIf="sideMenu">
-       <div>Home</div>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title> Courses </mat-panel-title>
-            <!-- <mat-panel-description> This is a summary of the content </mat-panel-description> -->
-          </mat-expansion-panel-header>
-          <div>Create Courses</div>
-          <div>View all courses</div>
-          <div>Manage the Courses</div>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title> Instructor</mat-panel-title>
-            <!-- <mat-panel-description> This is a summary of the content </mat-panel-description> -->
-          </mat-expansion-panel-header>
-          <div>View Profile of Instructors</div>
-          <div>Applications details</div>
-        </mat-expansion-panel>
-      </div>
-    </div>
     <div class="searchContainer">
       <div
         *ngIf="searchFound"
@@ -156,48 +129,22 @@
         <div
           *ngFor="let option of filteredOptions"
           class="filteredOptions"
-          (click)="closeSearchDropdown()"
+          (click)="redirectFromSearch(option.url)"
         >
-          {{ option }}<mat-icon>north_east</mat-icon>
+          {{ option.option }}<mat-icon>north_east</mat-icon>
         </div>
       </div>
     </div>
     <div class="profileDropdownContainer">
       <div *ngIf="opened" class="profileDropdown">
         <div class="profileOptions">
-          <button class="profileOptionsBtn" mat-flat-button>
-            <mat-icon>settings</mat-icon>
-            Profile Settings
-          </button>
-        </div>
-        <div class="profileOptions">
-          <button class="profileOptionsBtn" mat-flat-button>
-            <mat-icon>question_mark</mat-icon> Center
-          </button>
-        </div>
-        <div class="profileOptions">
-          <button class="profileOptionsBtn" mat-flat-button>
-            <mat-icon>upgrade</mat-icon> Plan Upgrade
-          </button>
-        </div>
-        <div class="profileOptions">
-          <button
-            class="profileOptionsBtn"
-            mat-flat-button
-            (click)="instructorApply()"
-          >
-            <mat-icon>approval</mat-icon>
-            Apply as Instructor
-          </button>
-        </div>
-        <div class="profileOptions">
           <button class="profileOptionsBtn" mat-flat-button (click)="logout()">
             <mat-icon>logout</mat-icon>Sign Out
           </button>
         </div>
-        <div class="profileOptions" *ngIf="loginData.user == 'users'">
+        <div [ngClass]="{ profileOptions: true }">
           <button
-            class="profileOptionsBtn"
+            [ngClass]="{profileOptionsBtn: true , 'disableBtn':loginData.user==='admins'}"
             mat-flat-button
             (click)="deleteAccount()"
           >

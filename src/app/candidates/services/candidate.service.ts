@@ -3,28 +3,39 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Candidate } from '../models/candidate.model';
 import { switchMap, catchError, map } from 'rxjs/operators';
-import { AdditionalDetails } from '../models/candidate.model'; 
+import { AdditionalDetails } from '../models/candidate.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CandidateService {
-  private candidatesUrl = 'http://localhost:3001/candidates'; 
-  private additionalDetailsUrl = 'http://localhost:3001/additionalDetails_Candidates'; 
+  private candidatesUrl = 'http://localhost:3000/users';
+  private additionalDetailsUrl = 'http://localhost:3000/additionalDetails_Candidates';
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
-  
 
- // Register only additional details
- registerCandidate(additionalDetails: AdditionalDetails): Observable<void> {
-  return this.httpClient.post<void>(this.additionalDetailsUrl, additionalDetails).pipe(
-    catchError((error) => {
-      console.error('Error during additional details registration:', error);
-      throw new Error('Failed to register additional details. Try again.');
-    })
-  );
-}
+  getlocalStorage() {
+    if (typeof localStorage !== 'undefined') {
+      if (localStorage.getItem('candidateEmail') == null) {
+        return null;
+      } else {
+        return localStorage.getItem('candidateEmail');
+      }
+    }else{
+      return  null;
+    }
+  }
+
+  // Register only additional details
+  registerCandidate(additionalDetails: AdditionalDetails): Observable<void> {
+    return this.httpClient.post<void>(this.additionalDetailsUrl, additionalDetails).pipe(
+      catchError((error) => {
+        console.error('Error during additional details registration:', error);
+        throw new Error('Failed to register additional details. Try again.');
+      })
+    );
+  }
   changePassword(email: string, currentPassword: string, newPassword: string): Observable<void> {
     return this.httpClient.get<Candidate[]>(`${this.candidatesUrl}?email=${email}`).pipe(
       switchMap((candidates: Candidate[]) => {
@@ -63,7 +74,7 @@ export class CandidateService {
   getAdditionalDetailsByEmail(email: any): Observable<AdditionalDetails | null> {
     const url = `${this.additionalDetailsUrl}?email=${email}`;
     console.log('Fetching additional details with URL:', url); // Debugging log
-  
+
     return this.httpClient.get<AdditionalDetails[]>(url).pipe(
       map((details) => {
         console.log('API Response:', details); // Debugging log
@@ -76,13 +87,13 @@ export class CandidateService {
       })
     );
   }
-  
-  
+
+
   updateProfile(candidate: Candidate, additionalDetails: AdditionalDetails): Observable<void> {
     // Construct URL to search for the candidate and additional details based on email
     const candidateUrl = `${this.candidatesUrl}?email=${candidate.email}`;
     const additionalDetailsUrl = `${this.additionalDetailsUrl}?email=${additionalDetails.email}`;
-  
+
     return this.httpClient.get<Candidate[]>(candidateUrl).pipe(
       switchMap((candidateList) => {
         if (candidateList.length === 0) {
@@ -90,7 +101,7 @@ export class CandidateService {
         }
         // We assume email is unique and there will be exactly one match
         const candidateToUpdate = candidateList[0];  // Get the first matching candidate
-  
+
         return this.httpClient.put<void>(`${this.candidatesUrl}/${candidateToUpdate.email}`, candidate).pipe( // Use email for PUT URL
           switchMap(() => {
             return this.httpClient.get<AdditionalDetails[]>(additionalDetailsUrl).pipe(
@@ -122,7 +133,7 @@ export class CandidateService {
         }
 
         const candidate = candidates[0];
-        
+
         // Update the candidate's details
         Object.keys(details).forEach(key => {
           if (details[key]) {

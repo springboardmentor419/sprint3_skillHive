@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgModelGroup } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { CourseService } from '../../../course/services/course.service';
+import { CandidateService } from '../../services/candidate.service';
 @Component({
   selector: 'app-view-all-courses',
   standalone: true,
@@ -24,16 +25,16 @@ export class ViewAllCoursesComponent implements OnInit {
   bookmark : boolean = false;
 
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService, private candidateService:CandidateService) {}
 
   ngOnInit() {
-    const candidateEmail = localStorage.getItem('candidateEmail');
+    const candidateEmail = this.candidateService.getlocalStorage();
     this.courseService.getCourses().subscribe((data) => {
       this.courses = data;
       this.filteredCourses = data;
       const uniqueCategories = Array.from(new Set(data.map(course => course.technology)));
       this.categories = ['All', ...uniqueCategories];
-      console.log(this.filteredCourses)
+      // console.log(this.filteredCourses)
 
       if (candidateEmail) {
         this.userExist = this.courses.some(course => course.enrolledCandidates.includes(candidateEmail));

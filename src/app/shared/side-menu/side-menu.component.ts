@@ -17,10 +17,10 @@ export class SideMenuComponent {
   @Input() isVisible: boolean = false;
 
   isActive(route: string): boolean {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
     return this.router.url === route;
   }
  

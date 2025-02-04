@@ -27,10 +27,10 @@ export class CandidateLoginComponent implements OnInit{
     // if (localStorage.getItem('candidateEmail')) {
     //   this.router.navigate(['candidate/dashboard'])
     // }
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
   }
 
   onLogin() {

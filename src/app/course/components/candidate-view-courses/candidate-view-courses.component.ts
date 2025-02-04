@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../../services/course.service';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../../../authentication/components/footer/footer.component';
 
 @Component({
   selector: 'candidate-view-courses',
   templateUrl: './candidate-view-courses.component.html',
   styleUrls: ['./candidate-view-courses.component.css'],
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FooterComponent],
 })
 export class CandidateViewCoursesComponent implements OnInit {
   courses: any[] = [];

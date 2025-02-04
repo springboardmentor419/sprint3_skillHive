@@ -12,6 +12,16 @@
       (ngSubmit)="OnFormSubmit()"
     >
       <mat-form-field>
+        <mat-label>User</mat-label>
+        <mat-select formControlName="user">
+          <mat-option value="users">Candidate</mat-option>
+          <mat-option value="instructors">Instructor</mat-option>
+        </mat-select>
+        @if (signupForm.get('user').hasError('required')) {
+        <mat-error>User type is required</mat-error>
+        }
+      </mat-form-field>
+      <mat-form-field>
         <mat-label>Full Name</mat-label>
         <input type="text" matInput formControlName="fullName" />
         @if (signupForm.get('fullName').hasError('required')) {
@@ -95,3 +105,4 @@
     </div>
   </mat-card-actions>
 </mat-card>
+<app-footer></app-footer>

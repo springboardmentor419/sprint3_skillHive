@@ -5,12 +5,14 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { InstructorService } from '../../../services/instructor.service';
 import { BeforApplyBannerComponent } from '../../befor-apply-banner/befor-apply-banner.component';
+import { FooterComponent } from '../../../../authentication/components/footer/footer.component';
+import { NewsletterComponent } from '../../newsletter/newsletter.component';
 
 
 @Component({
   selector: 'app-registration-form',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, CommonModule, RouterModule,BeforApplyBannerComponent],
+  imports: [ReactiveFormsModule, HttpClientModule, CommonModule, RouterModule,BeforApplyBannerComponent,FooterComponent,NewsletterComponent],
   templateUrl: './registration-form.component.html',
   styleUrl: './registration-form.component.css',
 })

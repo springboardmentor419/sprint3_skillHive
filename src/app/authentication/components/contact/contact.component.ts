@@ -6,18 +6,20 @@ import { MatInputModule } from '@angular/material/input';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
 import { ToastrService } from 'ngx-toastr';
 import { NewsletterComponent } from '../../../instructor/components/newsletter/newsletter.component';
+import { FooterComponent } from '../footer/footer.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule,NewsletterComponent],
+  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, ReactiveFormsModule, NewsletterComponent,FooterComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
 export class ContactComponent {
   contactForm: FormGroup;
 
-  constructor(private toastr: ToastrService,) { }
+  constructor(private toastr: ToastrService,private router:Router) { }
   ngOnInit(): void {
     this.contactForm = new FormGroup({
       fullName: new FormControl('', [Validators.required]),
@@ -34,10 +36,12 @@ export class ContactComponent {
       })
       .then(
         () => {
-          this.toastr.success('Thank you for contacting us. We will get back to you soon.', 'Message send successfully');
+          this.toastr.success('Thank you for contacting us. We will get back to you soon.', 'Message send successfully')
+          this.router.navigate(['home']);
         },
         (error) => {
           this.toastr.error('Something went wrong. Sorry for the inconvenience. Try again after some time.', 'Message not sent');
+          this.router.navigate(['home']);
         },
       );
   }

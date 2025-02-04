@@ -4,12 +4,13 @@ import { FilterComponent } from '../../filter/filter.component';
 import { iselectedFilters } from '../../../models/shortlisted_instrtuctor.model';
 import { RouterModule } from '@angular/router';
 import { AfterapplyBannerComponent } from '../../afterapply-banner/afterapply-banner.component';
+import { FooterComponent } from '../../../../authentication/components/footer/footer.component';
 
 
 @Component({
   selector: 'app-list-of-applicants',
   standalone: true,
-  imports: [FilterComponent, RouterModule,AfterapplyBannerComponent],
+  imports: [FilterComponent, RouterModule,AfterapplyBannerComponent,FooterComponent],
   templateUrl: './list-of-applicants.component.html',
   styleUrl: './list-of-applicants.component.css'
 })

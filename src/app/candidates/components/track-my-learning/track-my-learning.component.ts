@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';  
+import { CandidateService } from '../../services/candidate.service';
 
 
 @Component({
@@ -21,10 +22,10 @@ export class TrackMyLearningComponent implements OnInit {
   courses: any[] = [];
   filteredCourses: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private candidateService:CandidateService) {}
 
   ngOnInit(): void {
-    this.candidateEmail = localStorage.getItem('candidateEmail');
+    this.candidateEmail = this.candidateService.getlocalStorage();
     this.fetchCourses();
   }
 
