@@ -165,6 +165,8 @@ deleteAssessment(courseId: number, assessmentID:string): Observable<any> {
   }
 
   getAssessmentQuestions(courseId : number , assessmentID : number): Observable<any> {
+    console.log("from course service ");
+    console.log(assessmentID);
     return this.http.get<any[]>(this.apiUrl).pipe(
       map((courses) => {
         const course = courses.find(course => course.courseId === courseId);

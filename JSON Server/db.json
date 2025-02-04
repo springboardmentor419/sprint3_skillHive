@@ -691,7 +691,57 @@
               "duration": 30
             }
           },
-          "assessmentCompletions": []
+          "assessmentCompletions": [
+            {
+              "userId": 1231243,
+              "completionDate": "2025-02-03T12:11:40.709Z",
+              "assessmentData": {
+                "assessmentName": "test - 2",
+                "createdAt": "2025-01-28T15:21:11.120Z",
+                "scheduledDetails": {
+                  "duration": 30
+                },
+                "totalQuestions": 3,
+                "questions": [
+                  {
+                    "question": "a",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "a",
+                    "userAnswer": "a"
+                  },
+                  {
+                    "question": "b",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "b",
+                    "userAnswer": "a"
+                  },
+                  {
+                    "question": "c",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "c",
+                    "userAnswer": "a"
+                  }
+                ],
+                "startAt": "Mon Feb 03 2025 17:41:25 GMT+0530 (India Standard Time)",
+                "completionAt": "Mon Feb 03 2025 17:41:40 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         }
       ],
       "id": "1099"
@@ -1684,8 +1734,58 @@
           "entrolled": "12-12-24",
           "courseId": 543,
           "completionPercentage": 100,
-          "assessmentStatus": false,
-          "assessmentData": []
+          "assessmentStatus": true,
+          "assessmentData": [
+            {
+              "assessmentID": "32a4bcf1-055d-41c3-bfb1-3b83f0a154da",
+              "completionDate": "2025-02-03T12:11:40.709Z",
+              "assessmentData": {
+                "assessmentName": "test - 2",
+                "createdAt": "2025-01-28T15:21:11.120Z",
+                "scheduledDetails": {
+                  "duration": 30
+                },
+                "totalQuestions": 3,
+                "questions": [
+                  {
+                    "question": "a",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "a",
+                    "userAnswer": "a"
+                  },
+                  {
+                    "question": "b",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "b",
+                    "userAnswer": "a"
+                  },
+                  {
+                    "question": "c",
+                    "choices": [
+                      "a",
+                      "b",
+                      "c",
+                      "d"
+                    ],
+                    "answer": "c",
+                    "userAnswer": "a"
+                  }
+                ],
+                "startAt": "Mon Feb 03 2025 17:41:25 GMT+0530 (India Standard Time)",
+                "completionAt": "Mon Feb 03 2025 17:41:40 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         },
         {
           "title": "Introduction to JavaScript",

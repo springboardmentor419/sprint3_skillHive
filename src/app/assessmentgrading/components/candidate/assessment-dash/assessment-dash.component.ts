@@ -63,7 +63,7 @@ export class AssessmentDashComponent {
      {
       if(data){
         if(confirm("Are you sure ?"))
-          this.router.navigate(['/insideassessment'] ,{
+          this.router.navigate(['/insideassessment' ] ,{
             state  :{
               courseId : this.selectedCourse.courseId ,
               userId : this.userId,
