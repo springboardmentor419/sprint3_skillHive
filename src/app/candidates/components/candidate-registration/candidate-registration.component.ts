@@ -44,12 +44,12 @@ export class CandidateRegistrationComponent implements OnInit {
   constructor(private candidateService: CandidateService, public router: Router) {}
 
   ngOnInit(): void {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // window.scrollTo({
+    //   top: 0,
+    //   behavior: 'smooth'
+    // });
     
-      const storedEmail = localStorage.getItem('candidateEmail');
+      const storedEmail = this.candidateService.getlocalStorage();
       
       // If email is found in localStorage, check if additional details exist
       if (storedEmail) {

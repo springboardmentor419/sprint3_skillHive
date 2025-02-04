@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CourseService } from '../../services/course.service';
+import { FooterComponent } from '../../../authentication/components/footer/footer.component';
 
 @Component({
   selector: 'app-admin-create-course',
   templateUrl: './admin-create-course.component.html',
   styleUrls: ['./admin-create-course.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule,FooterComponent]
 })
 export class AdminCreateCourseComponent {
   course = {

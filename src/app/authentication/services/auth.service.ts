@@ -19,10 +19,10 @@ export class AuthService {
     name: null,
   }
   private baseUrl = 'http://localhost:3000';
-  constructor(private http: HttpClient,private router: Router,) { }
+  constructor(private http: HttpClient, private router: Router,) { }
 
-  registerUser(userData: RegisterPostData) {
-    return this.http.post(`${this.baseUrl}/users`, userData);
+  registerUser(userData: RegisterPostData, user: string) {
+    return this.http.post(`${this.baseUrl}/${user}`, userData);
   }
 
   addUserToNewsletter(userEmail) {
@@ -32,9 +32,9 @@ export class AuthService {
     return this.http.post(`${this.baseUrl}/newsletteremails`, user);
   }
 
-  userAlreadyPresent(email: string): Observable<User[]> {
+  userAlreadyPresent(email: string, user: string): Observable<User[]> {
     return this.http.get<User[]>(
-      `${this.baseUrl}/users?email=${email}`
+      `${this.baseUrl}/${user}?email=${email}`
     );
   }
 
@@ -52,22 +52,43 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
-    this.reloadComponent();
+    this.reloadComponent(null, null);
   }
 
-  reloadComponent() {
+  reloadComponent(user: string, email: string) {
+    console.log(user);
     var url = this.router.url;
-    console.log("Current route I am on:", url);
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`/`]).then(() => {
-        console.log(`After navigation I am on:${this.router.url}`)
-        window.location.reload();
-      })
+      if (user === "admins" || user == null) {
+        this.router.navigate(['/']).then(() => {
+          window.location.reload();
+        })
+      } else if (user === "users") {
+        this.router.navigate(['candidate/dashboard']).then(() => {
+          window.location.reload();
+        })
+      } else {
+        this.http.get<any>(`${this.baseUrl}/applicantDetails?email=${email}`).subscribe({
+          next: (response) => {
+            console.log(response);
+            if (response.length >= 1) {
+              this.router.navigate(['/']).then(() => {
+                window.location.reload();
+              })
+            } else {
+              this.router.navigate(['/apply-instructor']).then(() => {
+                window.location.reload();
+              })
+            }
+          },
+        });
+
+      }
     })
   }
 
-  deleteAccount(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/users/${id}`, {});
+  deleteAccount(id: string,user:string): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${user}/${id}`, {});
   }
 
   localStorage(data: loginDetails) {
@@ -81,6 +102,11 @@ export class AuthService {
     details.subscribe({
       next: (response) => {
         if (response.length >= 1) {
+          if (user === "users") {
+            localStorage.setItem('loggedIn', 'true');
+            localStorage.setItem('candidateName', response[0].fullName);
+            localStorage.setItem('candidateEmail', response[0].email);
+          }
           this.loginDetails = {
             islogged: true,
             user: user,

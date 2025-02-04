@@ -13,6 +13,7 @@ import { HttpClient } from '@angular/common/http';
 import { CountdownEvent, CountdownModule } from 'ngx-countdown';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-forgotpassword',
@@ -28,7 +29,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatButtonModule,
     CountdownModule,
     MatIconModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatSelectModule
   ]
 })
 export class ForgotpasswordComponent implements OnInit {
@@ -57,6 +59,7 @@ export class ForgotpasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.emailForm = new FormGroup({
+      user: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
     });
 
@@ -87,7 +90,8 @@ export class ForgotpasswordComponent implements OnInit {
 
   requestOTP() {
     const email = this.emailForm.get('email').value;
-    this.authService.userAlreadyPresent(email).subscribe({
+    const user = this.emailForm.get('user').value;
+    this.authService.userAlreadyPresent(email,user).subscribe({
       next: (users) => {
         if (users.length >= 1) {
           this.isSubmitting = true;
@@ -97,12 +101,11 @@ export class ForgotpasswordComponent implements OnInit {
             "otp": otp,
             "email": email,
           };
-          this.http.patch(`${this.baseUrl}/users/${users[0].id}`, {
+          this.http.patch(`${this.baseUrl}/${user}/${users[0].id}`, {
             otp,
             otpExpiry
           }).subscribe({
             next: (response) => {
-              console.log(response);
             }
           });
           this.http.post(this.emailUrl, data, { responseType: 'text' }).subscribe({
@@ -137,8 +140,9 @@ export class ForgotpasswordComponent implements OnInit {
 
   verifyOTP() {
     const email = this.emailForm.get('email').value;
+    const user = this.emailForm.get('user').value;
     const otpEntered = this.otpForm.get('otp').value;
-    this.http.get<any[]>(`${this.baseUrl}/users?email=${email}`).subscribe({
+    this.http.get<any[]>(`${this.baseUrl}/${user}?email=${email}`).subscribe({
       next: (users) => {
         const otpExpiry = new Date(users[0].otpExpiry);
         const now = new Date();
@@ -160,14 +164,15 @@ export class ForgotpasswordComponent implements OnInit {
 
   resetPassword() {
     const email = this.emailForm.get('email').value;
+    const user = this.emailForm.get('user').value;
     const newPassword = this.passwordForm.get('password').value;
 
-    this.authService.userAlreadyPresent(email).subscribe({
+    this.authService.userAlreadyPresent(email,user).subscribe({
       next: (users) => {
         if (users[0].password === newPassword) {
           this.toastr.error('New password must differ from the old one.', 'Error');
         } else {
-          this.http.patch(`${this.baseUrl}/users/${users[0].id}`, {
+          this.http.patch(`${this.baseUrl}/${user}/${users[0].id}`, {
             password: newPassword,
             otp: null,
             otpExpiry: null

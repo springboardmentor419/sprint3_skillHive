@@ -19,7 +19,6 @@ import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 // Fixed import name to match the actual component name
 import { ForgotpasswordComponent } from '../forgotpassword/forgotpassword.component';
-import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
 
 @Component({
@@ -36,7 +35,6 @@ import { FooterComponent } from "../footer/footer.component";
     MatIconModule,
     MatSelectModule,
     RouterLink,
-    HeaderComponent,
     FooterComponent
   ],
   templateUrl: './login.component.html',
@@ -72,9 +70,22 @@ export class LoginComponent implements OnInit {
     this.authService.getUserDetails(email, password, user).subscribe({
       next: (response) => {
         if (response.length >= 1) {
-          this.authService.reloadComponent();
+          this.authService.reloadComponent(user, email);
         } else {
-          this.toastr.error('Email or Password is wrong', 'Wrong Credentials');
+          this.authService.userAlreadyPresent(email, user).subscribe(
+            {
+              next: (response) => {
+                if (response.length >= 1) {
+                  this.toastr.error('Password is wrong', 'Wrong Credentials');
+                } else {
+                  this.toastr.error('Email address not found. Account creation required.', 'Account not found.');
+                }
+              },
+              error: (error) => {
+                this.toastr.error('Email or Password is wrong', 'Wrong Credentials');
+              }
+            }
+          );
         }
       },
       error: (err) => {

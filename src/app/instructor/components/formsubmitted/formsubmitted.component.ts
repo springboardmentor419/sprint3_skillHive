@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { BeforApplyBannerComponent } from "../befor-apply-banner/befor-apply-banner.component";
+import { FooterComponent } from '../../../authentication/components/footer/footer.component';
+import { NewsletterComponent } from '../newsletter/newsletter.component';
 
 @Component({
   selector: 'app-formsubmitted',
   standalone: true,
-  imports: [BeforApplyBannerComponent],
+  imports: [BeforApplyBannerComponent,FooterComponent,NewsletterComponent],
   templateUrl: './formsubmitted.component.html',
   styleUrl: './formsubmitted.component.css'
 })

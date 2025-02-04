@@ -77,7 +77,7 @@ export class CandidateDashboardComponent implements OnInit {
   constructor(private router: Router,private candidateservice:CandidateService) {}
 
   ngOnInit() {
-    if (typeof window !== 'undefined' && window.localStorage) {
+    if (typeof localStorage !== 'undefined') {
       const loggedIn = localStorage.getItem('loggedIn');
       if (loggedIn !== 'true') {
         this.router.navigate(['/login']);

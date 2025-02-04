@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
+import { Component, ElementRef, EventEmitter, HostListener, inject, Output, signal } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router } from '@angular/router';
@@ -25,7 +25,26 @@ export class HeaderComponent {
   opened: boolean = false
   openSearch: boolean = false;
   searchFound: boolean = false;
-  options = ["Sam", "Varun", "Jasmine"];
+  baseUrl = 'http://localhost:3000';
+  adminOptions = [{
+    option: "Home",
+    url: '/home'
+  }, {
+    option: "Create courses",
+    url: '/admin-create-course'
+  }, {
+    option: "View courses",
+    url: '/admin-view-courses'
+  }, {
+    option: "Manage courses",
+    url: '/admin-view-courses'
+  }, {
+    option: "View instructor profiles",
+    url: '/applicants'
+  }, {
+    option: "Application details",
+    url: '/applicants-details'
+  },];
   filteredOptions = null;
   sideMenu: boolean = false;
   loginData = {
@@ -35,8 +54,9 @@ export class HeaderComponent {
     email: null,
     id: null,
   };
+  @Output() sideMenuEvent: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private elementRef: ElementRef, public authService: AuthService, private toastr: ToastrService,) {
+  constructor(private elementRef: ElementRef, public authService: AuthService, private toastr: ToastrService) {
     if (this.authService.isAuthenticated() !== null) {
       this.loginData = this.authService.isAuthenticated();
     }
@@ -62,14 +82,18 @@ export class HeaderComponent {
   }
 
   filterData(enteredData) {
-    this.filteredOptions = this.options.filter(item => {
-      if (item.toLowerCase().includes(enteredData.toLowerCase())) {
-        return true;
-      } else {
-        return false;
-      }
-    })
-    return this.filteredOptions;
+    if (this.loginData.user == 'admins') {
+      this.filteredOptions = this.adminOptions.filter(item => {
+        if (item.option.toLowerCase().includes(enteredData.toLowerCase())) {
+          return true;
+        } else {
+          return false;
+        }
+      })
+      return this.filteredOptions;
+    } else {
+      return '';
+    }
   }
 
   signUp() {
@@ -81,7 +105,7 @@ export class HeaderComponent {
   }
 
   instructorApply() {
-    this.router.navigate(['admin']);
+    this.router.navigate(['/apply-instructor']);
     this.opened = false;
   }
 
@@ -97,6 +121,14 @@ export class HeaderComponent {
     } else {
       this.sideMenu = true;
     }
+    this.sideMenuEvent.emit(this.sideMenu);
+  }
+
+  redirectFromSearch(url: string) {
+    this.openSearch = false;
+    this.searchFound = false;
+    this.searchForm.reset();
+    this.router.navigate([url]);
   }
 
   closeSearchDropdown() {
@@ -115,9 +147,13 @@ export class HeaderComponent {
   }
 
   deleteAccount() {
-    this.authService.deleteAccount(this.loginData.id).subscribe({
+    this.authService.deleteAccount(this.loginData.id, this.loginData.user).subscribe({
       next: (next) => {
-        this.logout();
+        setTimeout(() => {
+          this.authService.logout();
+          this.router.navigate(['login']);
+          this.opened = false;
+        }, 3000);
         this.toastr.success('Account deleted successfully.', 'Success');
       }, error: (error) => {
         this.toastr.error('Error deleting account. Please try again later.', 'Error');

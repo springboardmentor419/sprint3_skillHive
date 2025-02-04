@@ -1,22 +1,37 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../../authentication/services/auth.service';
+import { ToastrService } from 'ngx-toastr';
+import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @Component({
   selector: 'app-newsletter',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule,],
   templateUrl: './newsletter.component.html',
   styleUrl: './newsletter.component.css'
 })
 export class NewsletterComponent {
-  email: string = '';
+  newsLetterForm: FormGroup;
+  constructor(private toastr: ToastrService, private authService: AuthService) { }
+
+  ngOnInit(): void {
+    this.newsLetterForm = new FormGroup({
+      email: new FormControl('',[Validators.email, Validators.required]),
+    });
+  }
 
   subscribe(): void {
-    if (!this.email || this.email.indexOf('@') === -1) {
-      alert('Please enter a valid email address.');
-    } else {
-      alert('Thank you for subscribing!');
-    }
+    this.authService.addUserToNewsletter(this.newsLetterForm.value.email).subscribe({
+      next: (response) => {
+        this.newsLetterForm.reset();
+        this.toastr.success('Thank you for subscribing to our weekly newsletter!', 'Subscribed Successfully');
+      },
+      error: (err) => {
+        this.toastr.error('An error occurred. Please try again later.', 'Not subscribed');
+      },
+    });
   }
 }

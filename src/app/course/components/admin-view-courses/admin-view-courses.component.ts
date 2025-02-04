@@ -2,13 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { CourseService } from '../../services/course.service';
+import { FooterComponent } from '../../../authentication/components/footer/footer.component';
 
 @Component({
   selector: 'app-admin-view-courses',
   templateUrl: './admin-view-courses.component.html',
   styleUrls: ['./admin-view-courses.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,FooterComponent],
 })
 export class AdminViewCoursesComponent implements OnInit {
   courses: any[] = [];
