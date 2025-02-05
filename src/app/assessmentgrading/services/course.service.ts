@@ -164,6 +164,32 @@ deleteAssessment(courseId: number, assessmentID:string): Observable<any> {
     );
   }
 
+  getAssessmentDetailsUpdated(courseId : number , userId :  number ) : Observable <any> {
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((courses) => {
+        const course = courses.find(course => course.courseId === courseId);
+        if(course){
+          const assessments = course.assessment.filter( (assessment:any) => assessment.schedule.isScheduled === true) ;
+          
+          const assessmentDetails =assessments.map((assessment: any) => ({
+            assessmentName: assessment.assessmentName,
+            assessmentID: assessment.assessmentID,
+            createdAt: assessment.createdAt,
+            scheduledDetails: assessment.schedule.scheduledDetails,
+            totalQuestions : assessment.questions.length,
+            isCompleted : Array.isArray(assessment.assessmentCompletions) 
+            ? assessment.assessmentCompletions.some((user: any) => user.userId === userId) 
+            : false,
+            isActive : false ,
+          }));
+          
+          return assessmentDetails;
+        }
+        return false
+      })
+    );
+  }
+
   getAssessmentQuestions(courseId : number , assessmentID : number): Observable<any> {
     console.log("from course service ");
     console.log(assessmentID);

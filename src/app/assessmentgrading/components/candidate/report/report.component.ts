@@ -30,7 +30,9 @@ export class ReportComponent implements OnInit{
     const diffMinutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60));
     const diffSeconds = Math.floor((diffMs % (1000 * 60)) / 1000);
     this.timeTaken = diffHours.toString().padStart(2 ,"0")+" : " +diffMinutes.toString().padStart(2 ,"0")+" : " +diffSeconds.toString().padStart(2 ,"0")
-    this.answeredQuestions = history.state.assessmentData.questions.filter((data:any) => data.userAnswer != "").length
+    console.log("assessmentData");
+    console.log(history.state.assessmentData.questions);
+    this.answeredQuestions = history.state.assessmentData.questions.filter((data:any) => data.userAnswer != null).length
     this.calculateMarks(history.state.assessmentData.questions);
   }
 

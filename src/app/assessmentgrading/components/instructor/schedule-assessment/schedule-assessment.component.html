@@ -56,6 +56,10 @@
               <th scope="row" class="px-4 py-2 font-medium text-gray-900 bg-gray-200">Total Questions</th>
               <td class="px-4 py-2">{{data.totalQuestions}}</td>
             </tr>
+            <tr class="border-b border-gray-300" *ngIf="data.isScheduled">
+              <th scope="row" class="px-4 py-2 font-medium text-gray-900 bg-gray-200">Previous duration</th>
+              <td class="px-4 py-2">{{data.scheduledDetails.duration}}</td>
+            </tr>
             <tr class="border-b border-gray-300">
               <th scope="row" class="px-4 py-2 font-medium text-gray-900 bg-gray-200">Duration (in minutes )</th>
               <td class="px-4 py-2">

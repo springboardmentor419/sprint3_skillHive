@@ -51,7 +51,6 @@ export class ScheduleAssessmentComponent implements OnInit{
       },
       (error) => {
         alert('Error saving assessment:');
-        console.log(error)
       }
     );
     

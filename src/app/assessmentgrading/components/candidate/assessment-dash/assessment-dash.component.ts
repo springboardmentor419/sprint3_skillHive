@@ -43,20 +43,40 @@ export class AssessmentDashComponent {
     
   }
 
+  //previous
+  // courseSelected(course : any){
+  //   console.log("from the assessment dash component : ");
+  //   console.log(course);
+  //   this.selectedCourse = course ;
+  //   const now = new Date() ;
+  //   this.CourseService.getAssessmentDetails(course.courseId).subscribe(data => {
+  //     this.candidateAssessment =data.map((assessment:any)=>{
+
+  //       const isActive = this.selectedCourse.assessmentStatus === false && this.selectedCourse.completionPercentage === 100 ;
+  //       const totalQuestions = this.selectedCourse.totalQuestions ;
+  //       const isCompleted = this.selectedCourse.assessmentStatus ;
+  //       return { ...assessment , isActive : isActive ,isCompleted : isCompleted }
+  //     })
+  //   })
+
+  // }
+
+  //updated 
   courseSelected(course : any){
+    
     this.selectedCourse = course ;
     const now = new Date() ;
-    this.CourseService.getAssessmentDetails(course.courseId).subscribe(data => {
+    this.CourseService.getAssessmentDetailsUpdated(course.courseId , this.userId).subscribe(data => {
       this.candidateAssessment =data.map((assessment:any)=>{
-
-        const isActive = this.selectedCourse.assessmentStatus === false && this.selectedCourse.completionPercentage === 100 ;
+        const isActive = this.selectedCourse.completionPercentage === 100 ;
         const totalQuestions = this.selectedCourse.totalQuestions ;
-        const isCompleted = this.selectedCourse.assessmentStatus ;
+        const isCompleted = assessment.isCompleted ;
         return { ...assessment , isActive : isActive ,isCompleted : isCompleted }
       })
     })
 
   }
+
 
   attemptAssessment(assessmentID : string){
     this.CourseService.canAttempt( this.userId ,this.selectedCourse.courseId , assessmentID).subscribe(data =>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { NgIf } from '@angular/common';
+import { Component, EventEmitter, Input, NgModule, OnInit, Output } from '@angular/core';
+import { NgModel } from '@angular/forms';
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  @Input() isMenuOpen: boolean = false; 
+  @Output() menuToggle = new EventEmitter<void>();
 
+  toggleSideMenu() {
+    this.menuToggle.emit();
+  }
 }
