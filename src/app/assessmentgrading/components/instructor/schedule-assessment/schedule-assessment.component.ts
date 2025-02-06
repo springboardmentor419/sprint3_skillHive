@@ -18,7 +18,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class ScheduleAssessmentComponent implements OnInit{
 
   courses: any[] = [];
-
+  instructorId : number ;
   userData = { 
     duration : ''
   };
@@ -34,11 +34,15 @@ export class ScheduleAssessmentComponent implements OnInit{
       isScheduled : boolean,
       scheduledDetails : any
     }
-  ) { }
+  ) { 
+    const instructorIdtemp = localStorage.getItem('instructorId');
+    this.instructorId = instructorIdtemp !== null ? parseInt(instructorIdtemp , 10) : 0 ;
+  }
 
 
   ngOnInit(): void {
-    this.CourseService.getCourses().subscribe(data => {
+    
+    this.CourseService.getCourses(this.instructorId).subscribe(data => {
       this.courses = data;
     });
   }

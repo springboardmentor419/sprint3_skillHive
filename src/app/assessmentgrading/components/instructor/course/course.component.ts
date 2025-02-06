@@ -25,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 export class CourseComponent implements OnInit{
   courses: Course[] = [];
+  instructorId : number = 123 ;
   selectedCourse : Course | undefined ;
   checking : null = null ;
 
@@ -62,10 +63,12 @@ export class CourseComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.CourseService.getCourses().subscribe(data => {
+    this.CourseService.getCourses(this.instructorId).subscribe(data => {
+      console.log(data);
       this.courses = data;
       this.selectedCourse = this.courses[0]
     });
+    localStorage.setItem('instructorId' , this.instructorId.toString() );
   }
 
   goToAssessment( ){

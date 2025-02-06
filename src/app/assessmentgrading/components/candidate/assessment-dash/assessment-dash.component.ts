@@ -27,9 +27,9 @@ export class AssessmentDashComponent {
   ngOnInit(): void {
     this.CourseService.getCandidate(this.userId).subscribe(data => {
       this.user = data ;
-      this.selectedCourse = data.entrolledCourses[0] ; 
+      this.selectedCourse = data.additionalDetails.entrolledCourses[0] ; 
 
-      this.CourseService.getAssessmentDetails(data.entrolledCourses[0].courseId).subscribe(data => {
+      this.CourseService.getAssessmentDetails(data.additionalDetails.entrolledCourses[0].courseId).subscribe(data => {
         
         this.candidateAssessment = data.map((assessment:any)=>{
 

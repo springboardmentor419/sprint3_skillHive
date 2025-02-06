@@ -16,14 +16,18 @@ export class CourseService {
 
   course : any[] = []
 
-  getCourses(): Observable<any> {
+  getCourses(instructorId : number ): Observable<any> {
     return this.http.get<any[]>(this.apiUrl).pipe(
       map((courses) => {
-        this.course = courses; 
-        return courses;
+        // this.course = courses; 
+        // return courses;
+        const courseFilter = courses.filter((course : any )=>course.instructorId === instructorId);
+        return courseFilter ;
       })
     );
   }
+
+
 
   createAssessment(courseId: number, assessmentData: any): Observable<any> {
 
@@ -251,7 +255,7 @@ deleteAssessment(courseId: number, assessmentID:string): Observable<any> {
       map(users => {
         const user = users.find(user => user.userId === userId);
         if(user){
-          const course = user.entrolledCourses.find(( course :any) => course.courseId === courseId)
+          const course = user.additionalDetails.entrolledCourses.find(( course :any) => course.courseId === courseId)
           if(!course.assessmentData){
             course.assessmentData = []
           }
@@ -283,7 +287,7 @@ deleteAssessment(courseId: number, assessmentID:string): Observable<any> {
       map(users => {
         const user = users.find(user => user.userId === userId);
         if(user){
-          const course = user.entrolledCourses.find(( course :any) => course.courseId === courseId)
+          const course = user.additionalDetails.entrolledCourses.find(( course :any) => course.courseId === courseId)
           if(course)
           {
             const assessment = course.assessmentData?.find((assessment:any)=>assessment.assessmentID === assessmentID)

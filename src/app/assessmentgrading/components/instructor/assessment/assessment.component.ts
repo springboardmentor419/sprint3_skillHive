@@ -35,10 +35,13 @@ export class AssessmentComponent implements OnInit{
   submittedData: any = null;
 
 
+  
   ngOnInit(): void {
+    const instructorIdtemp = localStorage.getItem('instructorId');
+    const instructorId = instructorIdtemp !== null ? parseInt(instructorIdtemp , 10) : 0 ;
     this.route.params.subscribe(params => {
       this.courseId = +params['id'];
-      this.courseService.getCourses().subscribe(data => {
+      this.courseService.getCourses(instructorId).subscribe(data => {
         this.courses = data;
         this.courseTitle = this.courses.find((course:any) => course.courseId === this.courseId).title
       });

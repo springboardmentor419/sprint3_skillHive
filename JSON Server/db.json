@@ -4,7 +4,7 @@
       "title": "Introduction to BigData",
       "createdAt": "10-12-24",
       "instructorId": 123,
-      "courseId": 542,
+      "courseId": 3,
       "entrolledCandidates": [],
       "assessment": [
         {
@@ -316,7 +316,7 @@
           "schedule": {
             "isScheduled": true,
             "scheduledDetails": {
-              "duration": 59
+              "duration": 60
             }
           },
           "assessmentCompletions": [
@@ -643,10 +643,18 @@
       "id": "8cd5"
     },
     {
+      "title": "Testing course",
+      "createdAt": "10-12-24",
+      "instructorId": 13,
+      "courseId": -1,
+      "entrolledCandidates": [],
+      "assessment": []
+    },
+    {
       "title": "Angular Basics",
       "createdAt": "12-12-24",
       "instructorId": 123,
-      "courseId": 543,
+      "courseId": 2,
       "assessment": [
         {
           "assessmentName": "Angular Basics End Assessment",
@@ -960,7 +968,325 @@
               "duration": 30
             }
           },
-          "assessmentCompletions": []
+          "assessmentCompletions": [
+            {
+              "userId": 1231243,
+              "completionDate": "2025-02-05T13:36:02.917Z",
+              "assessmentData": {
+                "assessmentName": "Angular Basics End Assessment",
+                "createdAt": "2025-02-04T15:08:14.606Z",
+                "scheduledDetails": {
+                  "duration": 30
+                },
+                "totalQuestions": 30,
+                "questions": [
+                  {
+                    "question": "What is Angular?",
+                    "choices": [
+                      "A front-end web framework",
+                      "A database management system",
+                      "A programming language",
+                      "A server-side framework"
+                    ],
+                    "answer": "A front-end web framework",
+                    "userAnswer": "A front-end web framework"
+                  },
+                  {
+                    "question": "Which command is used to create a new Angular project using Angular CLI?",
+                    "choices": [
+                      "ng new",
+                      "ng create",
+                      "ng generate",
+                      "ng init"
+                    ],
+                    "answer": "ng new"
+                  },
+                  {
+                    "question": "Which decorator is used to define an Angular component?",
+                    "choices": [
+                      "@NgModule",
+                      "@Component",
+                      "@Injectable",
+                      "@Directive"
+                    ],
+                    "answer": "@Component"
+                  },
+                  {
+                    "question": "What is a module in Angular?",
+                    "choices": [
+                      "A container for a group of components, directives, and services",
+                      "A file that contains HTML templates",
+                      "A type of service",
+                      "A routing configuration"
+                    ],
+                    "answer": "A container for a group of components, directives, and services"
+                  },
+                  {
+                    "question": "How does Angular support two-way data binding?",
+                    "choices": [
+                      "Using the [(ngModel)] syntax",
+                      "Using [data] binding only",
+                      "Using event binding only",
+                      "Using service injection"
+                    ],
+                    "answer": "Using the [(ngModel)] syntax"
+                  },
+                  {
+                    "question": "What is dependency injection in Angular?",
+                    "choices": [
+                      "A design pattern that allows classes to receive dependencies",
+                      "A way to inject HTML templates",
+                      "A method to connect with databases",
+                      "A technique for compiling code"
+                    ],
+                    "answer": "A design pattern that allows classes to receive dependencies"
+                  },
+                  {
+                    "question": "Which directive is used to iterate over a list in Angular templates?",
+                    "choices": [
+                      "*ngFor",
+                      "*ngIf",
+                      "*ngSwitch",
+                      "*ngRepeat"
+                    ],
+                    "answer": "*ngFor"
+                  },
+                  {
+                    "question": "Which lifecycle hook is called after Angular has initialized all data-bound properties of a directive?",
+                    "choices": [
+                      "ngOnInit",
+                      "ngAfterViewInit",
+                      "ngDoCheck",
+                      "ngAfterContentInit"
+                    ],
+                    "answer": "ngOnInit"
+                  },
+                  {
+                    "question": "What is the primary purpose of services in Angular?",
+                    "choices": [
+                      "To share data and logic across components",
+                      "To create UI components",
+                      "To define routing",
+                      "To style the application"
+                    ],
+                    "answer": "To share data and logic across components"
+                  },
+                  {
+                    "question": "How can you create a service in Angular?",
+                    "choices": [
+                      "Using the command 'ng generate service'",
+                      "Manually writing a function in a component",
+                      "Using a module decorator",
+                      "By adding it to the bootstrap array"
+                    ],
+                    "answer": "Using the command 'ng generate service'"
+                  },
+                  {
+                    "question": "What is the role of the RouterModule in Angular?",
+                    "choices": [
+                      "To enable routing and navigation between views",
+                      "To manage HTTP requests",
+                      "To provide dependency injection",
+                      "To create services"
+                    ],
+                    "answer": "To enable routing and navigation between views"
+                  },
+                  {
+                    "question": "Which Angular directive is used to conditionally display content?",
+                    "choices": [
+                      "*ngIf",
+                      "*ngFor",
+                      "*ngSwitch",
+                      "*ngShow"
+                    ],
+                    "answer": "*ngIf"
+                  },
+                  {
+                    "question": "What does the ngOnInit lifecycle hook do?",
+                    "choices": [
+                      "Initializes component properties",
+                      "Destroys the component",
+                      "Handles user input",
+                      "Compiles the component template"
+                    ],
+                    "answer": "Initializes component properties"
+                  },
+                  {
+                    "question": "How do you pass data from a parent component to a child component?",
+                    "choices": [
+                      "Using Input property binding",
+                      "Using Output event binding",
+                      "Using services",
+                      "Using routing parameters"
+                    ],
+                    "answer": "Using Input property binding"
+                  },
+                  {
+                    "question": "Which of the following is a valid Angular pipe?",
+                    "choices": [
+                      "date",
+                      "filter",
+                      "sort",
+                      "map"
+                    ],
+                    "answer": "date"
+                  },
+                  {
+                    "question": "How do you handle HTTP requests in Angular?",
+                    "choices": [
+                      "Using the HttpClient service",
+                      "Using JavaScript fetch API",
+                      "Using XMLHttpRequest",
+                      "Using Angular Router"
+                    ],
+                    "answer": "Using the HttpClient service"
+                  },
+                  {
+                    "question": "Which Angular module provides HTTP client functionality?",
+                    "choices": [
+                      "HttpClientModule",
+                      "BrowserModule",
+                      "FormsModule",
+                      "RouterModule"
+                    ],
+                    "answer": "HttpClientModule"
+                  },
+                  {
+                    "question": "What is the purpose of the Angular CLI command 'ng serve'?",
+                    "choices": [
+                      "To compile and serve the application locally",
+                      "To create a new component",
+                      "To generate a service",
+                      "To run unit tests"
+                    ],
+                    "answer": "To compile and serve the application locally"
+                  },
+                  {
+                    "question": "How do you add Angular Material to your project?",
+                    "choices": [
+                      "Using the command 'ng add @angular/material'",
+                      "By importing MaterialModule manually",
+                      "By downloading it from the website",
+                      "Using npm install angular-material only"
+                    ],
+                    "answer": "Using the command 'ng add @angular/material'"
+                  },
+                  {
+                    "question": "What is the use of the 'providers' array in an Angular module?",
+                    "choices": [
+                      "To register services for dependency injection",
+                      "To declare components",
+                      "To import modules",
+                      "To bootstrap the application"
+                    ],
+                    "answer": "To register services for dependency injection"
+                  },
+                  {
+                    "question": "What is the significance of the 'bootstrap' array in the Angular module?",
+                    "choices": [
+                      "It defines the entry component that Angular should bootstrap",
+                      "It lists all the components in the application",
+                      "It registers services",
+                      "It configures routing"
+                    ],
+                    "answer": "It defines the entry component that Angular should bootstrap"
+                  },
+                  {
+                    "question": "Which binding syntax is used for event binding in Angular?",
+                    "choices": [
+                      "()",
+                      "[]",
+                      "[()]",
+                      "{{}}"
+                    ],
+                    "answer": "()"
+                  },
+                  {
+                    "question": "How do you apply CSS styles to an Angular component?",
+                    "choices": [
+                      "Using the 'styles' or 'styleUrls' properties in the @Component decorator",
+                      "By linking a global CSS file",
+                      "Using inline HTML styles only",
+                      "By editing the index.html file"
+                    ],
+                    "answer": "Using the 'styles' or 'styleUrls' properties in the @Component decorator"
+                  },
+                  {
+                    "question": "Which file typically contains global styles in an Angular project?",
+                    "choices": [
+                      "styles.css",
+                      "app.component.css",
+                      "main.css",
+                      "index.css"
+                    ],
+                    "answer": "styles.css"
+                  },
+                  {
+                    "question": "What is the purpose of the Angular Router outlet?",
+                    "choices": [
+                      "To display routed components",
+                      "To serve static files",
+                      "To handle dependency injection",
+                      "To compile templates"
+                    ],
+                    "answer": "To display routed components"
+                  },
+                  {
+                    "question": "How do you guard routes in Angular?",
+                    "choices": [
+                      "Using route guards like CanActivate",
+                      "By disabling the router",
+                      "Using services only",
+                      "Using CSS classes"
+                    ],
+                    "answer": "Using route guards like CanActivate"
+                  },
+                  {
+                    "question": "Which Angular decorator is used to create a directive?",
+                    "choices": [
+                      "@Directive",
+                      "@Component",
+                      "@Pipe",
+                      "@Injectable"
+                    ],
+                    "answer": "@Directive"
+                  },
+                  {
+                    "question": "What is lazy loading in Angular?",
+                    "choices": [
+                      "A design pattern to load modules on demand",
+                      "A technique to delay component initialization",
+                      "A method for styling components",
+                      "A feature for handling HTTP requests"
+                    ],
+                    "answer": "A design pattern to load modules on demand"
+                  },
+                  {
+                    "question": "How do you share data between sibling components in Angular?",
+                    "choices": [
+                      "Using a shared service",
+                      "Using Input properties",
+                      "Using Output events",
+                      "By directly accessing each other’s variables"
+                    ],
+                    "answer": "Using a shared service"
+                  },
+                  {
+                    "question": "What is the function of the RxJS library in Angular?",
+                    "choices": [
+                      "To handle asynchronous operations and event streams",
+                      "To compile Angular templates",
+                      "To perform dependency injection",
+                      "To manage component styling"
+                    ],
+                    "answer": "To handle asynchronous operations and event streams"
+                  }
+                ],
+                "startAt": "Wed Feb 05 2025 19:05:59 GMT+0530 (India Standard Time)",
+                "completionAt": "Wed Feb 05 2025 19:06:02 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         }
       ],
       "id": "1099"
@@ -969,7 +1295,7 @@
       "title": "Introduction to JavaScript",
       "createdAt": "12-12-24",
       "instructorId": 123,
-      "courseId": 544,
+      "courseId": 4,
       "assessment": [
         {
           "assessmentName": "JS end Assessment",
@@ -1292,7 +1618,7 @@
       "title": "React Advanced",
       "createdAt": "12-12-24",
       "instructorId": 123,
-      "courseId": 545,
+      "courseId": 1,
       "assessment": [
         {
           "assessmentName": "React Advanced End Assessment",
@@ -1616,12 +1942,13 @@
     {
       "name": "sihabutheen",
       "userId": 1231243,
-      "entrolledCourses": [
+      "additionalDetails" : {
+        "entrolledCourses": [
         {
           "title": "Introduction to BigData",
           "createdAt": "10-12-24",
           "instructorId": 123,
-          "courseId": 542,
+          "courseId": 3,
           "entrolled": "12-12-24",
           "completionPercentage": 100,
           "assessmentStatus": true,
@@ -1953,19 +2280,338 @@
           "courseId": 543,
           "completionPercentage": 100,
           "assessmentStatus": true,
-          "assessmentData": []
+          "assessmentData": [
+            {
+              "assessmentID": "d9da3ab2-cb4e-487b-86ca-228ee2d57723",
+              "completionDate": "2025-02-05T13:36:02.917Z",
+              "assessmentData": {
+                "assessmentName": "Angular Basics End Assessment",
+                "createdAt": "2025-02-04T15:08:14.606Z",
+                "scheduledDetails": {
+                  "duration": 30
+                },
+                "totalQuestions": 30,
+                "questions": [
+                  {
+                    "question": "What is Angular?",
+                    "choices": [
+                      "A front-end web framework",
+                      "A database management system",
+                      "A programming language",
+                      "A server-side framework"
+                    ],
+                    "answer": "A front-end web framework",
+                    "userAnswer": "A front-end web framework"
+                  },
+                  {
+                    "question": "Which command is used to create a new Angular project using Angular CLI?",
+                    "choices": [
+                      "ng new",
+                      "ng create",
+                      "ng generate",
+                      "ng init"
+                    ],
+                    "answer": "ng new"
+                  },
+                  {
+                    "question": "Which decorator is used to define an Angular component?",
+                    "choices": [
+                      "@NgModule",
+                      "@Component",
+                      "@Injectable",
+                      "@Directive"
+                    ],
+                    "answer": "@Component"
+                  },
+                  {
+                    "question": "What is a module in Angular?",
+                    "choices": [
+                      "A container for a group of components, directives, and services",
+                      "A file that contains HTML templates",
+                      "A type of service",
+                      "A routing configuration"
+                    ],
+                    "answer": "A container for a group of components, directives, and services"
+                  },
+                  {
+                    "question": "How does Angular support two-way data binding?",
+                    "choices": [
+                      "Using the [(ngModel)] syntax",
+                      "Using [data] binding only",
+                      "Using event binding only",
+                      "Using service injection"
+                    ],
+                    "answer": "Using the [(ngModel)] syntax"
+                  },
+                  {
+                    "question": "What is dependency injection in Angular?",
+                    "choices": [
+                      "A design pattern that allows classes to receive dependencies",
+                      "A way to inject HTML templates",
+                      "A method to connect with databases",
+                      "A technique for compiling code"
+                    ],
+                    "answer": "A design pattern that allows classes to receive dependencies"
+                  },
+                  {
+                    "question": "Which directive is used to iterate over a list in Angular templates?",
+                    "choices": [
+                      "*ngFor",
+                      "*ngIf",
+                      "*ngSwitch",
+                      "*ngRepeat"
+                    ],
+                    "answer": "*ngFor"
+                  },
+                  {
+                    "question": "Which lifecycle hook is called after Angular has initialized all data-bound properties of a directive?",
+                    "choices": [
+                      "ngOnInit",
+                      "ngAfterViewInit",
+                      "ngDoCheck",
+                      "ngAfterContentInit"
+                    ],
+                    "answer": "ngOnInit"
+                  },
+                  {
+                    "question": "What is the primary purpose of services in Angular?",
+                    "choices": [
+                      "To share data and logic across components",
+                      "To create UI components",
+                      "To define routing",
+                      "To style the application"
+                    ],
+                    "answer": "To share data and logic across components"
+                  },
+                  {
+                    "question": "How can you create a service in Angular?",
+                    "choices": [
+                      "Using the command 'ng generate service'",
+                      "Manually writing a function in a component",
+                      "Using a module decorator",
+                      "By adding it to the bootstrap array"
+                    ],
+                    "answer": "Using the command 'ng generate service'"
+                  },
+                  {
+                    "question": "What is the role of the RouterModule in Angular?",
+                    "choices": [
+                      "To enable routing and navigation between views",
+                      "To manage HTTP requests",
+                      "To provide dependency injection",
+                      "To create services"
+                    ],
+                    "answer": "To enable routing and navigation between views"
+                  },
+                  {
+                    "question": "Which Angular directive is used to conditionally display content?",
+                    "choices": [
+                      "*ngIf",
+                      "*ngFor",
+                      "*ngSwitch",
+                      "*ngShow"
+                    ],
+                    "answer": "*ngIf"
+                  },
+                  {
+                    "question": "What does the ngOnInit lifecycle hook do?",
+                    "choices": [
+                      "Initializes component properties",
+                      "Destroys the component",
+                      "Handles user input",
+                      "Compiles the component template"
+                    ],
+                    "answer": "Initializes component properties"
+                  },
+                  {
+                    "question": "How do you pass data from a parent component to a child component?",
+                    "choices": [
+                      "Using Input property binding",
+                      "Using Output event binding",
+                      "Using services",
+                      "Using routing parameters"
+                    ],
+                    "answer": "Using Input property binding"
+                  },
+                  {
+                    "question": "Which of the following is a valid Angular pipe?",
+                    "choices": [
+                      "date",
+                      "filter",
+                      "sort",
+                      "map"
+                    ],
+                    "answer": "date"
+                  },
+                  {
+                    "question": "How do you handle HTTP requests in Angular?",
+                    "choices": [
+                      "Using the HttpClient service",
+                      "Using JavaScript fetch API",
+                      "Using XMLHttpRequest",
+                      "Using Angular Router"
+                    ],
+                    "answer": "Using the HttpClient service"
+                  },
+                  {
+                    "question": "Which Angular module provides HTTP client functionality?",
+                    "choices": [
+                      "HttpClientModule",
+                      "BrowserModule",
+                      "FormsModule",
+                      "RouterModule"
+                    ],
+                    "answer": "HttpClientModule"
+                  },
+                  {
+                    "question": "What is the purpose of the Angular CLI command 'ng serve'?",
+                    "choices": [
+                      "To compile and serve the application locally",
+                      "To create a new component",
+                      "To generate a service",
+                      "To run unit tests"
+                    ],
+                    "answer": "To compile and serve the application locally"
+                  },
+                  {
+                    "question": "How do you add Angular Material to your project?",
+                    "choices": [
+                      "Using the command 'ng add @angular/material'",
+                      "By importing MaterialModule manually",
+                      "By downloading it from the website",
+                      "Using npm install angular-material only"
+                    ],
+                    "answer": "Using the command 'ng add @angular/material'"
+                  },
+                  {
+                    "question": "What is the use of the 'providers' array in an Angular module?",
+                    "choices": [
+                      "To register services for dependency injection",
+                      "To declare components",
+                      "To import modules",
+                      "To bootstrap the application"
+                    ],
+                    "answer": "To register services for dependency injection"
+                  },
+                  {
+                    "question": "What is the significance of the 'bootstrap' array in the Angular module?",
+                    "choices": [
+                      "It defines the entry component that Angular should bootstrap",
+                      "It lists all the components in the application",
+                      "It registers services",
+                      "It configures routing"
+                    ],
+                    "answer": "It defines the entry component that Angular should bootstrap"
+                  },
+                  {
+                    "question": "Which binding syntax is used for event binding in Angular?",
+                    "choices": [
+                      "()",
+                      "[]",
+                      "[()]",
+                      "{{}}"
+                    ],
+                    "answer": "()"
+                  },
+                  {
+                    "question": "How do you apply CSS styles to an Angular component?",
+                    "choices": [
+                      "Using the 'styles' or 'styleUrls' properties in the @Component decorator",
+                      "By linking a global CSS file",
+                      "Using inline HTML styles only",
+                      "By editing the index.html file"
+                    ],
+                    "answer": "Using the 'styles' or 'styleUrls' properties in the @Component decorator"
+                  },
+                  {
+                    "question": "Which file typically contains global styles in an Angular project?",
+                    "choices": [
+                      "styles.css",
+                      "app.component.css",
+                      "main.css",
+                      "index.css"
+                    ],
+                    "answer": "styles.css"
+                  },
+                  {
+                    "question": "What is the purpose of the Angular Router outlet?",
+                    "choices": [
+                      "To display routed components",
+                      "To serve static files",
+                      "To handle dependency injection",
+                      "To compile templates"
+                    ],
+                    "answer": "To display routed components"
+                  },
+                  {
+                    "question": "How do you guard routes in Angular?",
+                    "choices": [
+                      "Using route guards like CanActivate",
+                      "By disabling the router",
+                      "Using services only",
+                      "Using CSS classes"
+                    ],
+                    "answer": "Using route guards like CanActivate"
+                  },
+                  {
+                    "question": "Which Angular decorator is used to create a directive?",
+                    "choices": [
+                      "@Directive",
+                      "@Component",
+                      "@Pipe",
+                      "@Injectable"
+                    ],
+                    "answer": "@Directive"
+                  },
+                  {
+                    "question": "What is lazy loading in Angular?",
+                    "choices": [
+                      "A design pattern to load modules on demand",
+                      "A technique to delay component initialization",
+                      "A method for styling components",
+                      "A feature for handling HTTP requests"
+                    ],
+                    "answer": "A design pattern to load modules on demand"
+                  },
+                  {
+                    "question": "How do you share data between sibling components in Angular?",
+                    "choices": [
+                      "Using a shared service",
+                      "Using Input properties",
+                      "Using Output events",
+                      "By directly accessing each other’s variables"
+                    ],
+                    "answer": "Using a shared service"
+                  },
+                  {
+                    "question": "What is the function of the RxJS library in Angular?",
+                    "choices": [
+                      "To handle asynchronous operations and event streams",
+                      "To compile Angular templates",
+                      "To perform dependency injection",
+                      "To manage component styling"
+                    ],
+                    "answer": "To handle asynchronous operations and event streams"
+                  }
+                ],
+                "startAt": "Wed Feb 05 2025 19:05:59 GMT+0530 (India Standard Time)",
+                "completionAt": "Wed Feb 05 2025 19:06:02 GMT+0530 (India Standard Time)"
+              }
+            }
+          ]
         },
         {
           "title": "Introduction to JavaScript",
           "createdAt": "12-12-24",
           "instructorId": 123,
           "entrolled": "12-12-24",
-          "courseId": 544,
+          "courseId": 4,
           "completionPercentage": 90,
           "assessmentStatus": false,
           "assessmentData": []
         }
-      ],
+      ]
+      },
       "id": "e74c"
     },
     {
